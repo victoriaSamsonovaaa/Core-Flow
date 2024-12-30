@@ -29,6 +29,8 @@ struct StartView: View {
             .padding(.bottom, 20)
             .sheet(isPresented: $showSignUp) {
                 SignUpEmailView()
+                    .presentationDetents([.height(680)])
+                    .presentationDragIndicator(.visible)
             }
             
             HStack {
@@ -40,8 +42,11 @@ struct StartView: View {
                 }
                 .font(.custom("Cochin", size: 20))
                 .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
-                .fullScreenCover(isPresented: $showSignIn) {
+                .sheet(isPresented: $showSignIn) {
                     SignInEmailView()
+                        .presentationDetents([.medium])
+                        .presentationDragIndicator(.visible)
+                    
                 }
             }
         }
