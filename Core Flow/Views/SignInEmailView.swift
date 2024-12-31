@@ -24,7 +24,7 @@ struct SignInEmailView: View {
                 .font(.custom("Cochin", size: 24))
                 .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                 .padding(.bottom, 4)
-            CustomTextField(placeholder: "Enter your password", text: $viewModel.password)
+            CustomSecureField(placeholder: "Enter your password", text: $viewModel.password)
                 .padding(.bottom, 40)
             
             Button("Sign In") {

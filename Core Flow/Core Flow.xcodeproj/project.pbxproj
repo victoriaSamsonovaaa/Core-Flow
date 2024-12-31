@@ -11,10 +11,12 @@
 		AF4F491F2D22B19600CA0E34 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AF4F491E2D22B19600CA0E34 /* FirebaseAuth */; };
 		AF4F49212D22B19600CA0E34 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AF4F49202D22B19600CA0E34 /* FirebaseAuthCombine-Community */; };
 		AF4F494A2D235A3A00CA0E34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF4F49492D235A3A00CA0E34 /* GoogleService-Info.plist */; };
+		AFCE29852D241350002C2B2B /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE29842D241350002C2B2B /* AuthenticationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF4F49492D235A3A00CA0E34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AFCE29842D241350002C2B2B /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		AFF470B32D2170FD00ACA175 /* Core Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Core Flow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 		AFF470AA2D2170FD00ACA175 = {
 			isa = PBXGroup;
 			children = (
+				AFCE29842D241350002C2B2B /* AuthenticationManager.swift */,
 				AFF470C72D2171AA00ACA175 /* Other */,
 				AFF470C62D21719F00ACA175 /* ViewModels */,
 				AFF470C52D21719800ACA175 /* Models */,
@@ -166,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFCE29852D241350002C2B2B /* AuthenticationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
