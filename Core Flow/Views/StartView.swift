@@ -11,6 +11,7 @@ struct StartView: View {
 
     @State private var showSignUp: Bool = false
     @State private var showSignIn: Bool = false
+    
     var body: some View {
         VStack {
             Text("Let's Get Started")
@@ -55,6 +56,7 @@ struct StartView: View {
         .background(Color(#colorLiteral(red: 0.3328896165, green: 0.4141520262, blue: 0.3390924037, alpha: 1)))
         .edgesIgnoringSafeArea(.all)
     }
+    
 }
 
 #Preview {

@@ -21,7 +21,7 @@ struct SignUpEmailView: View {
                 .font(.custom("Cochin-Bold", size: 24))
                 .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                 .padding(.bottom, 4)
-            CustomTextField(placeholder: "Enter your Name", text: $viewModel.email)
+            CustomTextField(placeholder: "Enter your Name", text: $viewModel.name)
                 .padding(.bottom, 40)
             
             Text("Email")
@@ -35,19 +35,19 @@ struct SignUpEmailView: View {
                 .font(.custom("Cochin-Bold", size: 24))
                 .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                 .padding(.bottom, 4)
-            CustomTextField(placeholder: "Create password", text: $viewModel.password)
+            CustomSecureField(placeholder: "Create password", text: $viewModel.password)
                 .padding(.bottom, 40)
             
             Text("Password")
                 .font(.custom("Cochin-Bold", size: 24))
                 .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                 .padding(.bottom, 4)
-            CustomTextField(placeholder: "Repeat password", text: $viewModel.secondPassword)
+            CustomSecureField(placeholder: "Repeat password", text: $viewModel.secondPassword)
                 .padding(.bottom, 40)
             
             
             Button("Create an account") {
-                
+                viewModel.signUp()
             }
             .font(.custom("Cochin", size: 26))
             .foregroundStyle(Color(#colorLiteral(red: 0.9121661782, green: 0.8284091949, blue: 0.773633182, alpha: 1)))
