@@ -30,7 +30,7 @@ struct StartView: View {
             .padding(.bottom, 20)
             .sheet(isPresented: $showSignUp) {
                 SignUpEmailView()
-                    .presentationDetents([.height(680)])
+                    .presentationDetents([.height(730)])
                     .presentationDragIndicator(.visible)
             }
             
