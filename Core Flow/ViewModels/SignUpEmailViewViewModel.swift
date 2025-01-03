@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class SignUpEmailViewViewModel: ObservableObject {
 
     @Published var name: String = ""
@@ -60,9 +61,9 @@ class SignUpEmailViewViewModel: ObservableObject {
             return (false, "You can not leave password field empty. ")
         }
 
-        let passwordRegEx = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?.).{6,15}$"
+        let passwordRegEx = "(?=.*[0-9])(?=.*[A-Z])[0-9a-zA-Z]{6,15}"
         let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
-        return (passwordPredicate.evaluate(with: password), passwordPredicate.evaluate(with: password) ? "" : "Password must contain at least one uppercase letter, one lowercase letter, one number and be between 6 and 15 characters long")
+        return (passwordPredicate.evaluate(with: password), passwordPredicate.evaluate(with: password) ? "" : "Password must contain at least one uppercase letter, one number and be between 6 and 15 characters long")
     }
 
     func comparePasswords(password: String, confirmPassword: String) -> (Bool, String) {

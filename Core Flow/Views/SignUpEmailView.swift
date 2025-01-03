@@ -60,7 +60,7 @@ struct SignUpEmailView: View {
                     secondPasswordOutput = viewModel.comparePasswords(password: viewModel.password, confirmPassword: viewModel.secondPassword).1
                 }
             Text(secondPasswordOutput)
-                .padding(.bottom, 60)
+                .padding(.bottom, 40)
                 .font(.custom("Cochin-Bold", size: 20))
                 .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)).secondary)
 
@@ -73,6 +73,12 @@ struct SignUpEmailView: View {
             .background(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
             .cornerRadius(16)
             .padding(.bottom, 10)
+            
+            Text(viewModel.customMessage)
+                .padding(.bottom, 8)
+                .font(.custom("Cochin-Bold", size: 20))
+                .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)).secondary)
+
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
