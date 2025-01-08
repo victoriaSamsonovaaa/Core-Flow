@@ -16,72 +16,124 @@ struct SignUpEmailView: View {
     @State private var secondPasswordOutput: String = ""
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Name")
-                .font(.custom("Cochin-Bold", size: 24))
-                .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
-                .padding(.bottom, 4)
-            CustomTextField(placeholder: "Enter your Name", text: $viewModel.name)
-                .padding(.bottom, 30)
-
-            Text("Email")
-                .font(.custom("Cochin-Bold", size: 24))
-                .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
-                .padding(.bottom, 4)
-            CustomTextField(placeholder: "Enter your Email", text: $viewModel.email)
-                .onChange(of: viewModel.email) { newValue in
-                    emailOutput = viewModel.validateEmail(email: newValue).1
-                }
-
-            Text(emailOutput)
-                .padding(.bottom, 20)
-                .font(.custom("Cochin-Bold", size: 20))
-                .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)).secondary)
-
-            Text("Password")
-                .font(.custom("Cochin-Bold", size: 24))
-                .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
-                .padding(.bottom, 4)
-            CustomSecureField(placeholder: "Create password", text: $viewModel.password)
-                .onChange(of: viewModel.password) { newValue in
-                    passwordOutput = viewModel.validatePassword(password: newValue).1
-                }
-            Text(passwordOutput)
-                .padding(.bottom, 20)
-                .font(.custom("Cochin-Bold", size: 20))
-                .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)).secondary)
-
-            Text("Password")
-                .font(.custom("Cochin-Bold", size: 24))
-                .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
-                .padding(.bottom, 4)
-            CustomSecureField(placeholder: "Repeat password", text: $viewModel.secondPassword)
-                .onChange(of: viewModel.secondPassword) { newValue in
-                    secondPasswordOutput = viewModel.comparePasswords(password: viewModel.password, confirmPassword: viewModel.secondPassword).1
-                }
-            Text(secondPasswordOutput)
-                .padding(.bottom, 20)
-                .font(.custom("Cochin-Bold", size: 20))
-                .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)).secondary)
-
-            Text(viewModel.customMessage)
-                .padding(.bottom, 8)
-                .font(.custom("Cochin-Bold", size: 24))
-                .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)).secondary)
+        VStack(alignment: .center) {
+            Text("Create account")
+                .font(.custom("Optima-Regular", size: 48))
+                .bold()
+                .foregroundStyle(Color.customBlue)
+                .padding(.top, 20)
+                .padding(.bottom, 22)
             
-            Button("Create an account") {
+            VStack(alignment: .leading) {
+                Text("Name")
+                    .font(.custom("Cochin-Bold", size: 24))
+                    .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
+                    .padding(.bottom, 2)
+                CustomTextField(placeholder: "Enter your Name", text: $viewModel.name)
+                    .padding(.bottom, 22)
+
+                Text("Email")
+                    .font(.custom("Cochin-Bold", size: 24))
+                    .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
+                    .padding(.bottom, 2)
+                CustomTextField(placeholder: "Enter your Email", text: $viewModel.email)
+                    .padding(.bottom, 22)
+    //                .onChange(of: viewModel.email) { newValue in
+    //                    emailOutput = viewModel.validateEmail(email: newValue).1
+    //                }
+
+//                Text(emailOutput)
+//                    .padding(.bottom, 14)
+//                    .font(.custom("Cochin-Bold", size: 20))
+//                    .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)).secondary)
+
+                Text("Password")
+                    .font(.custom("Cochin-Bold", size: 24))
+                    .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
+                    .padding(.bottom, 2)
+                CustomSecureField(placeholder: "Create password", text: $viewModel.password)
+                    .padding(.bottom, 30)
+    //                .onChange(of: viewModel.password) { newValue in
+    //                    passwordOutput = viewModel.validatePassword(password: newValue).1
+    //                }
+//                Text(passwordOutput)
+//                    .padding(.bottom, 24)
+//                    .font(.custom("Cochin-Bold", size: 20))
+//                    .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)).secondary)
+
+                Toggle(isOn: $viewModel.isAgree) {
+                    HStack {
+                        Text("Agree with Terms & Privacy policy")
+                            .font(.custom("Cochin", size: 20))
+                            .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
+                            .bold()
+                    }
+                }
+                .tint(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
+                .padding(.bottom, 60)
+            }
+            .padding(.horizontal)
+            
+            Button("Sign Up") {
                 viewModel.signUp()
             }
             .disabled(viewModel.flag)
             .font(.custom("Cochin", size: 26))
             .foregroundStyle(Color(#colorLiteral(red: 0.9121661782, green: 0.8284091949, blue: 0.773633182, alpha: 1)))
-            .frame(maxWidth: 370, maxHeight: 55)
+            .frame(maxWidth: 200, minHeight: 45)
             .background(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
             .cornerRadius(16)
-            .padding(.bottom, 10)
-
+            .padding(.bottom, 16)
+            
+            HStack {
+                Rectangle()
+                    .frame(width: 80, height: 1)
+                    .overlay(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
+                    .opacity(0.3)
+                Text("Or")
+                    .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
+                    .font(.custom("Cochin", size: 20))
+                Rectangle()
+                    .frame(width: 80, height: 1)
+                    .overlay(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
+                    .opacity(0.3)
+                }
+            
+            HStack {
+                Spacer()
+                Button {
+                    
+                } label: {
+                    Image("facebook")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .scaledToFit()
+                }
+                
+                Button {
+                    
+                } label: {
+                    Image(systemName: "apple.logo")
+                        .resizable()
+                        .frame(width: 25.25, height: 30)
+                        .scaledToFit()
+                        .tint(Color.black)
+                }
+                .padding()
+                
+                
+                Button {
+                    
+                } label: {
+                    Image("google")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .scaledToFit()
+                }
+                
+                Spacer()
+            }
         }
-        .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(#colorLiteral(red: 0.9121661782, green: 0.8284091949, blue: 0.773633182, alpha: 0.7578390731)))
     }

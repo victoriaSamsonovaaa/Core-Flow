@@ -13,19 +13,25 @@ class SignUpEmailViewViewModel: ObservableObject {
     @Published var name: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
-    @Published var secondPassword: String = ""
+    //@Published var secondPassword: String = ""
     @Published var customMessage: String = ""
     @Published var flag: Bool = true
+    @Published var isAgree: Bool = false
 
     func signUp() {
         Task {
-            do {
-                let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
-                customMessage = "You are signed up successfully"
-                print(returnedUserData)
-            } catch {
-                customMessage = "Something went wrong. Please try again"
-                print("Error: \(error)")
+            if isAgree {
+                do {
+                    let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
+                    customMessage = "You are signed up successfully"
+                    print(returnedUserData)
+                } catch {
+                    customMessage = "Something went wrong. Please try again"
+                    print("Error: \(error)")
+                }
+            }
+            else {
+                customMessage = "You should accept our terms"
             }
         }
     }
@@ -64,18 +70,20 @@ class SignUpEmailViewViewModel: ObservableObject {
         return (isValid, isValid ? "" : "Password must contain at least one uppercase letter, one number and be between 6 and 15 characters long")
     }
 
-    func comparePasswords(password: String, confirmPassword: String) -> (Bool, String) {
-        guard !password.isEmpty else {
-            flag = false
-            return (false, "You should confirm password.")
-        }
+    
+//    func comparePasswords(password: String, confirmPassword: String) -> (Bool, String) {
+//        guard !password.isEmpty else {
+//            flag = false
+//            return (false, "You should confirm password.")
+//        }
+//
+//        let passwordsMatch = (password == confirmPassword)
+//
+//        if !passwordsMatch {
+//            flag = false
+//        }
+//
+//        return (passwordsMatch, passwordsMatch ? "" : "Passwords do not match")
+//    }
 
-        let passwordsMatch = (password == confirmPassword)
-
-        if !passwordsMatch {
-            flag = false
-        }
-
-        return (passwordsMatch, passwordsMatch ? "" : "Passwords do not match")
-    }
 }

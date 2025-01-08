@@ -13,7 +13,7 @@ struct CustomTextField: View {
     
     var body: some View {
         TextField("", text: $text, prompt: Text(placeholder).foregroundColor(Color.gray))
-            .font(.custom("HiraMinProN-W6", size: 20))
+            .font(.custom("Optima-Regular", size: 20))
             .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
             .padding()
             .background(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)).opacity(0.3))
@@ -29,7 +29,7 @@ struct CustomSecureField: View {
     
     var body: some View {
         SecureField("", text: $text, prompt: Text(placeholder).foregroundColor(Color.gray))
-            .font(.custom("HiraMinProN-W6", size: 20))
+            .font(.custom("Optima-Regular", size: 20))
             .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
             .padding()
             .background(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)).opacity(0.3))
