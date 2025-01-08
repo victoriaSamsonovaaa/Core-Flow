@@ -8,53 +8,48 @@
 import SwiftUI
 
 struct StartView: View {
-
-    @State private var showSignUp: Bool = false
     @State private var showSignIn: Bool = false
     
     var body: some View {
-        VStack {
-            Text("Let's Get Started")
-                .font(.custom("Cochin-Bold", size: 40))
-                .foregroundStyle(Color(#colorLiteral(red: 0.9121661782, green: 0.8284091949, blue: 0.773633182, alpha: 1)))
-                .padding(.top, 120)
-                .padding(.bottom, 400)
-            Button("Sign Up") {
-                showSignUp = true
-            }
-            .font(.custom("Cochin", size: 26))
-            .foregroundStyle(Color(#colorLiteral(red: 0.9121661782, green: 0.8284091949, blue: 0.773633182, alpha: 1)))
-            .frame(width: 360, height: 55)
-            .background(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
-            .cornerRadius(16)
-            .padding(.bottom, 20)
-            .sheet(isPresented: $showSignUp) {
-                SignUpEmailView()
-                    .presentationDetents([.height(730)])
-                    .presentationDragIndicator(.visible)
-            }
-            
-            HStack {
-                Text("Already have an account?")
-                    .font(.custom("Cochin", size: 20))
+        NavigationStack {
+            VStack {
+                Text("Let's Get Started")
+                    .font(.custom("Cochin-Bold", size: 40))
                     .foregroundStyle(Color(#colorLiteral(red: 0.9121661782, green: 0.8284091949, blue: 0.773633182, alpha: 1)))
-                Button("Sign In") {
-                    showSignIn = true
+                    .padding(.top, 120)
+                    .padding(.bottom, 400)
+                NavigationLink {
+                    SignUpEmailView()
+                } label: {
+                    Text("Sign Up")
+                        .font(.custom("Cochin", size: 26))
+                        .foregroundStyle(Color(#colorLiteral(red: 0.9121661782, green: 0.8284091949, blue: 0.773633182, alpha: 1)))
+                        .frame(width: 360, height: 55)
+                        .background(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
+                        .cornerRadius(16)
+                        .padding(.bottom, 20)
                 }
-                .font(.custom("Cochin", size: 20))
-                .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
-                .sheet(isPresented: $showSignIn) {
-                    SignInEmailView()
-                        .presentationDetents([.medium])
-                        .presentationDragIndicator(.visible)
-                    
+                
+                HStack {
+                    Text("Already have an account?")
+                        .font(.custom("Cochin", size: 20))
+                        .foregroundStyle(Color(#colorLiteral(red: 0.9121661782, green: 0.8284091949, blue: 0.773633182, alpha: 1)))
+                    NavigationLink {
+                        SignInEmailView()
+                    } label: {
+                        Text("Sign In")
+                            .font(.custom("Cochin", size: 20))
+                            .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
+                    }
                 }
             }
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(#colorLiteral(red: 0.3328896165, green: 0.4141520262, blue: 0.3390924037, alpha: 1)))
+            .edgesIgnoringSafeArea(.all)
         }
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(#colorLiteral(red: 0.3328896165, green: 0.4141520262, blue: 0.3390924037, alpha: 1)))
-        .edgesIgnoringSafeArea(.all)
+        .accentColor(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
+        
     }
     
 }
