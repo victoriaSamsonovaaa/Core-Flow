@@ -16,11 +16,9 @@ struct SignInEmailView: View {
                 .font(.custom("Optima-Regular", size: 48))
                 .bold()
                 .foregroundStyle(Color.customBlue)
-                .padding(.top, 20)
                 .padding(.bottom, 22)
             
             VStack(alignment: .leading) {
-                
                 Text("Email")
                     .font(.custom("Cochin", size: 24))
                     .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
@@ -35,15 +33,20 @@ struct SignInEmailView: View {
                 CustomSecureField(placeholder: "Enter your password", text: $viewModel.password)
                     .padding(.bottom, 20)
                 
+                HStack {
+                    Text("Forgot password?")
+                        .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
+                        .font(.custom("Cochin-Bold", size: 20))
+                    Button("Click Here") {
+                        
+                    }
+                    .foregroundStyle(Color.black)
+                    .font(.custom("Cochin-Bold", size: 20))
+                }
+                .padding(.bottom, 30)
             }
             .padding()
-            
-            Button("Forgot password?") {
-                
-            }
-            .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
-            .font(.custom("Cochin-Bold", size: 20))
-            .padding(.bottom, 30)
+
             
             Button("Sign In") {
                 
@@ -53,7 +56,7 @@ struct SignInEmailView: View {
             .frame(width: 370, height: 55)
             .background(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
             .cornerRadius(16)
-            .padding(.bottom, 50)
+            .padding(.bottom, 20)
             
             HStack {
                 Rectangle()
@@ -68,6 +71,7 @@ struct SignInEmailView: View {
                     .overlay(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                     .opacity(0.3)
                 }
+            .padding(.bottom, 10)
             
             HStack {
                 Spacer()
@@ -89,8 +93,7 @@ struct SignInEmailView: View {
                         .scaledToFit()
                         .tint(Color.black)
                 }
-                .padding()
-                
+                .padding(.horizontal)
                 
                 Button {
                     
@@ -100,7 +103,6 @@ struct SignInEmailView: View {
                         .frame(width: 30, height: 30)
                         .scaledToFit()
                 }
-                
                 Spacer()
             }
         }

@@ -17,11 +17,12 @@ struct SignUpEmailView: View {
 
     var body: some View {
         VStack(alignment: .center) {
+           Spacer()
             Text("Create account")
                 .font(.custom("Optima-Regular", size: 48))
                 .bold()
                 .foregroundStyle(Color.customBlue)
-                .padding(.top, 20)
+                .padding(.top, 30)
                 .padding(.bottom, 22)
             
             VStack(alignment: .leading) {
@@ -70,7 +71,7 @@ struct SignUpEmailView: View {
                     }
                 }
                 .tint(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
-                .padding(.bottom, 60)
+                .padding(.bottom, 50)
             }
             .padding(.horizontal)
             
@@ -83,7 +84,7 @@ struct SignUpEmailView: View {
             .frame(maxWidth: 370, minHeight: 55)
             .background(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
             .cornerRadius(16)
-            .padding(.bottom, 16)
+            .padding(.bottom, 20)
             
             HStack {
                 Rectangle()
@@ -98,6 +99,7 @@ struct SignUpEmailView: View {
                     .overlay(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                     .opacity(0.3)
                 }
+            .padding(.bottom, 10)
             
             HStack {
                 Spacer()
@@ -119,8 +121,7 @@ struct SignUpEmailView: View {
                         .scaledToFit()
                         .tint(Color.black)
                 }
-                .padding()
-                
+                .padding(.horizontal)
                 
                 Button {
                     
