@@ -13,7 +13,6 @@ class SignUpEmailViewViewModel: ObservableObject {
     @Published var name: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
-    //@Published var secondPassword: String = ""
     @Published var customMessage: String = ""
     @Published var flag: Bool = true
     @Published var isAgree: Bool = false
