@@ -2,33 +2,21 @@
 //  HomeView.swift
 //  Core Flow
 //
-//  Created by Victoria Samsonova on 31.12.24.
+//  Created by Victoria Samsonova on 9.01.25.
 //
 
 import SwiftUI
 
 struct HomeView: View {
-    
-    @State private var showSignUpView: Bool = false
-    
+    @Binding var isAuthenticated: Bool
+
     var body: some View {
-        ZStack {
-            NavigationStack {
-                SettingsView(showSignInView: $showSignUpView)
-            }
-        }
-        .onAppear {
-            let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
-            self.showSignUpView = authUser == nil
-        }
-        .fullScreenCover(isPresented: $showSignUpView) {
-            NavigationStack {
-                SignUpEmailView()
-            }
+        NavigationStack {
+            SettingsView(isAuthenticated: $isAuthenticated)
         }
     }
 }
 
 #Preview {
-    HomeView()
+    HomeView(isAuthenticated: .constant(true))
 }

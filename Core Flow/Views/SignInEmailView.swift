@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SignInEmailView: View {
     @State private var viewModel = SignInEmailViewViewModel()
+    @Binding var isAuthenticated: Bool
     
     var body: some View {
         VStack(alignment: .center) {
@@ -49,7 +50,7 @@ struct SignInEmailView: View {
 
             
             Button("Sign In") {
-                
+                isAuthenticated = true
             }
             .font(.custom("Cochin", size: 26))
             .foregroundStyle(Color(#colorLiteral(red: 0.9121661782, green: 0.8284091949, blue: 0.773633182, alpha: 1)))
@@ -113,5 +114,5 @@ struct SignInEmailView: View {
 }
 
 #Preview {
-    SignInEmailView()
+    SignInEmailView(isAuthenticated: .constant(false))
 }

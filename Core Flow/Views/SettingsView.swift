@@ -10,14 +10,14 @@ import SwiftUI
 struct SettingsView: View {
     
     @StateObject private var viewModel = SettingsViewViewModel()
-    @Binding var showSignInView: Bool
+    @Binding var isAuthenticated: Bool
     
     var body: some View {
         Button("Log out") {
             Task {
                 do {
                     try viewModel.signOut()
-                    showSignInView = true
+                    isAuthenticated = false
                 }
             }
         }
@@ -31,5 +31,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView(showSignInView: .constant(false))
+    SettingsView(isAuthenticated: .constant(false))
 }

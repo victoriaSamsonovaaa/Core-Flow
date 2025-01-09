@@ -23,7 +23,7 @@ struct Core_FlowApp: App {
     
     var body: some Scene {
         WindowGroup {
-            StartView()
+            BaseView()
         }
     }
 }

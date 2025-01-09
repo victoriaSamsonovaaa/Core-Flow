@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct StartView: View {
+    
     @State private var showSignIn: Bool = false
+    @Binding var isAuthenticated: Bool
     
     var body: some View {
         NavigationStack {
@@ -19,7 +21,7 @@ struct StartView: View {
                     .padding(.top, 120)
                     .padding(.bottom, 400)
                 NavigationLink {
-                    SignUpEmailView()
+                    SignUpEmailView(isAuthenticated: $isAuthenticated)
                 } label: {
                     Text("Sign Up")
                         .font(.custom("Cochin", size: 26))
@@ -35,7 +37,7 @@ struct StartView: View {
                         .font(.custom("Cochin", size: 20))
                         .foregroundStyle(Color(#colorLiteral(red: 0.9121661782, green: 0.8284091949, blue: 0.773633182, alpha: 1)))
                     NavigationLink {
-                        SignInEmailView()
+                        SignInEmailView(isAuthenticated: $isAuthenticated)
                     } label: {
                         Text("Sign In")
                             .font(.custom("Cochin", size: 20))
@@ -55,7 +57,7 @@ struct StartView: View {
 }
 
 #Preview {
-    StartView()
+    StartView(isAuthenticated: .constant(false))
 }
 
 //            HStack {
