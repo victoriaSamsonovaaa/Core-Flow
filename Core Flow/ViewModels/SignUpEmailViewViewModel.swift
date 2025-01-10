@@ -17,17 +17,19 @@ class SignUpEmailViewViewModel: ObservableObject {
     @Published var flag: Bool = true
     @Published var isAgree: Bool = false
 
-    func signUp() {
+    func signUp() async throws {
         Task {
             if isAgree {
-                do {
-                    let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
-                    customMessage = "You are signed up successfully"
-                    print(returnedUserData)
-                } catch {
-                    customMessage = "Something went wrong. Please try again"
-                    print("Error: \(error)")
-                }
+//                do {
+//                    let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
+//                    customMessage = "You are signed up successfully"
+//                    print(returnedUserData)
+//                } catch {
+//                    customMessage = "Something went wrong. Please try again"
+//                    print("Error: \(error)")
+//                }
+                let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
+                print(returnedUserData)
             }
             else {
                 customMessage = "You should accept our terms"

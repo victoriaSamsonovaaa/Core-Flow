@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BaseView: View {
+struct FirstBaseView: View {
     
     @State private var isAuthenticated: Bool = false
     
@@ -27,5 +27,5 @@ struct BaseView: View {
 }
 
 #Preview {
-    BaseView()
+    FirstBaseView()
 }
