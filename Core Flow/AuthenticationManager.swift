@@ -33,6 +33,12 @@ class AuthenticationManager {
         return AuthDataResultModel(user: user)
     }
     
+    
+    func resetPassword(email: String) async throws {
+        try await Auth.auth().sendPasswordReset(withEmail: email)
+    }
+    
+    
     func signOut() throws {
         try Auth.auth().signOut()
     }
