@@ -13,7 +13,7 @@ class AuthenticationManager {
     static let shared = AuthenticationManager()
     private init() { }
     
-    
+    //@discardableResult
     func createUser(email: String, password: String) async throws -> AuthDataResultModel {
         let authDataResults = try await Auth.auth().createUser(withEmail: email, password: password)
         return AuthDataResultModel(user: authDataResults.user)
