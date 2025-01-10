@@ -23,4 +23,8 @@ class SettingsViewViewModel: ObservableObject {
         
         try await AuthenticationManager.shared.resetPassword(email: email)
     }
+    
+    func updatePassword(newPassword: String) async throws {
+        try await AuthenticationManager.shared.updatePassword(password: newPassword)
+    }
 }

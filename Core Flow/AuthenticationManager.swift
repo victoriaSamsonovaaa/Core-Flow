@@ -38,6 +38,13 @@ class AuthenticationManager {
         try await Auth.auth().sendPasswordReset(withEmail: email)
     }
     
+    func updatePassword(password: String) async throws {
+        guard let authUser = Auth.auth().currentUser else {
+            throw URLError(.badServerResponse)
+        }
+        
+        try await authUser.updatePassword(to: password)
+    }
     
     func signOut() throws {
         try Auth.auth().signOut()
