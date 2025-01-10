@@ -48,16 +48,25 @@ struct SignInEmailView: View {
             }
             .padding()
 
-            
-            Button("Sign In") {
-                isAuthenticated = true
+            Button {
+                Task {
+                    do {
+                        try await viewModel.signIn()
+                        isAuthenticated = true
+                    } catch {
+                        print("Error: \(error)")
+                    }
+                }
+            } label: {
+                Text("Sign In")
+                    .font(.custom("Cochin", size: 26))
+                    .foregroundStyle(Color(#colorLiteral(red: 0.9121661782, green: 0.8284091949, blue: 0.773633182, alpha: 1)))
+                    .frame(width: 370, height: 55)
+                    .background(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
+                    .cornerRadius(16)
+                    .padding(.bottom, 20)
             }
-            .font(.custom("Cochin", size: 26))
-            .foregroundStyle(Color(#colorLiteral(red: 0.9121661782, green: 0.8284091949, blue: 0.773633182, alpha: 1)))
-            .frame(width: 370, height: 55)
-            .background(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
-            .cornerRadius(16)
-            .padding(.bottom, 20)
+
             
             HStack {
                 Rectangle()
