@@ -6,12 +6,15 @@
 //
 
 import Foundation
-import GoogleSignIn
-import GoogleSignInSwift
+import AuthenticationServices
+import CryptoKit
 
 @MainActor
 class SignUpViewViewModel: ObservableObject {
-
+    
+    @Published var didSignedInWithApple: Bool = false
+    let signInAppleHelper = SignInAppleHelper()
+    
     @Published var name: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
@@ -68,21 +71,24 @@ class SignUpViewViewModel: ObservableObject {
         let tokens = try await helper.signInGoogle()
         try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
     }
-
     
-//    func comparePasswords(password: String, confirmPassword: String) -> (Bool, String) {
-//        guard !password.isEmpty else {
-//            flag = false
-//            return (false, "You should confirm password.")
-//        }
-//
-//        let passwordsMatch = (password == confirmPassword)
-//
-//        if !passwordsMatch {
-//            flag = false
-//        }
-//
-//        return (passwordsMatch, passwordsMatch ? "" : "Passwords do not match")
-//    }
-
+    func signUpWithApple() async throws {
+        signInAppleHelper.startSignInWithAppleFlow { result in
+            switch result {
+                case .success(let signInAppleResults):
+                Task {
+                    do {
+                        try await AuthenticationManager.shared.signInWithApple(tokens: signInAppleResults)
+                        self.didSignedInWithApple = true
+                    } catch {
+                        
+                    }
+                }
+            case .failure(let error):
+                print("Error signing in with Apple: \(error)")
+            }
+        }
+    }
+    
 }
+
