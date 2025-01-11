@@ -109,6 +109,7 @@ struct SignUpView: View {
                 Task {
                     do {
                         try await viewModel.signUpWithApple()
+                        isAuthenticated = true
                     } catch {
                         
                     }
@@ -118,11 +119,6 @@ struct SignUpView: View {
                     .allowsHitTesting(false)
             })
             .frame(width: 280, height: 45)
-            .onChange(of: viewModel.didSignedInWithApple) { newValue in
-                if newValue {
-                    isAuthenticated = true
-                }
-            }
 
             GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .light, style: .wide, state: .normal)) {
                 Task {
