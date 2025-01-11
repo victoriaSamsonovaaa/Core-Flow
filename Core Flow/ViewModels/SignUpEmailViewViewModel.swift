@@ -12,7 +12,6 @@ import CryptoKit
 @MainActor
 class SignUpViewViewModel: ObservableObject {
     
-    @Published var didSignedInWithApple: Bool = false
     let signInAppleHelper = SignInAppleHelper()
     
     @Published var name: String = ""
@@ -73,21 +72,25 @@ class SignUpViewViewModel: ObservableObject {
     }
     
     func signUpWithApple() async throws {
-        signInAppleHelper.startSignInWithAppleFlow { result in
-            switch result {
-                case .success(let signInAppleResults):
-                Task {
-                    do {
-                        try await AuthenticationManager.shared.signInWithApple(tokens: signInAppleResults)
-                        self.didSignedInWithApple = true
-                    } catch {
-                        
-                    }
-                }
-            case .failure(let error):
-                print("Error signing in with Apple: \(error)")
-            }
-        }
+        let helper = SignInAppleHelper()
+        let tokens = try await helper.startSignInWithAppleFlow()
+        try await AuthenticationManager.shared.signInWithApple(tokens: tokens)
+        
+//        signInAppleHelper.startSignInWithAppleFlow { result in
+//            switch result {
+//                case .success(let signInAppleResults):
+//                Task {
+//                    do {
+//                        try await AuthenticationManager.shared.signInWithApple(tokens: signInAppleResults)
+//                        self.didSignedInWithApple = true
+//                    } catch {
+//                        
+//                    }
+//                }
+//            case .failure(let error):
+//                print("Error signing in with Apple: \(error)")
+//            }
+//        }
     }
     
 }
