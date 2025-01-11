@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import GoogleSignIn
+import GoogleSignInSwift
 
 @MainActor
-class SignUpEmailViewViewModel: ObservableObject {
+class SignUpViewViewModel: ObservableObject {
 
     @Published var name: String = ""
     @Published var email: String = ""
@@ -59,6 +61,12 @@ class SignUpEmailViewViewModel: ObservableObject {
         }
         
         return (isValid, isValid ? "" : "Password must contain at least one uppercase letter, one number and be between 6 and 15 characters long")
+    }
+    
+    func signUpWithGoogle() async throws {
+        let helper = SignInGoogleHelper()
+        let tokens = try await helper.signInGoogle()
+        try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
     }
 
     

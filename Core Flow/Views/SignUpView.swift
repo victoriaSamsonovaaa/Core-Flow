@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import GoogleSignInSwift
 
-struct SignUpEmailView: View {
-    @StateObject private var viewModel = SignUpEmailViewViewModel()
+struct SignUpView: View {
+    @StateObject private var viewModel = SignUpViewViewModel()
     
     @Binding var isAuthenticated: Bool
     @State private var emailOutput: String = ""
@@ -126,13 +127,15 @@ struct SignUpEmailView: View {
                 }
                 .padding(.horizontal)
 
-                Button {
-                    
-                } label: {
-                    Image("google")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .scaledToFit()
+                GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .light, style: .icon, state: .normal)) {
+                    Task {
+                        do {
+                            try await viewModel.signUpWithGoogle()
+                            isAuthenticated = true
+                        } catch {
+                            
+                        }
+                    }
                 }
 
                 Spacer()
@@ -146,6 +149,6 @@ struct SignUpEmailView: View {
 
 #Preview {
     NavigationStack {
-        SignUpEmailView(isAuthenticated: .constant(false))
+        SignUpView(isAuthenticated: .constant(false))
     }
 }

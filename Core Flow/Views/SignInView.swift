@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct SignInEmailView: View {
-    @State private var viewModel = SignInEmailViewViewModel()
+struct SignInView: View {
+    @State private var viewModel = SignInViewViewModel()
     @Binding var isAuthenticated: Bool
     
     var body: some View {
@@ -123,5 +123,5 @@ struct SignInEmailView: View {
 }
 
 #Preview {
-    SignInEmailView(isAuthenticated: .constant(false))
+    SignInView(isAuthenticated: .constant(false))
 }
