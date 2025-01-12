@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import AuthenticationServices
+import CryptoKit
 
+@MainActor
 class SignInViewViewModel: ObservableObject {
     
     @Published var name: String = ""
@@ -22,6 +25,18 @@ class SignInViewViewModel: ObservableObject {
         }
         
         try await AuthenticationManager.shared.signInUser(email: email, password: password)
+    }
+    
+    func signUpWithGoogle() async throws {
+        let helper = SignInGoogleHelper()
+        let tokens = try await helper.signInGoogle()
+        try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
+    }
+    
+    func signUpWithApple() async throws {
+        let helper = SignInAppleHelper()
+        let tokens = try await helper.startSignInWithAppleFlow()
+        try await AuthenticationManager.shared.signInWithApple(tokens: tokens)
     }
     
 }

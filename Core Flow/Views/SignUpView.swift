@@ -90,20 +90,18 @@ struct SignUpView: View {
 
             HStack {
                 Rectangle()
-                    .frame(width: 120, height: 1)
+                    .frame(width: 160, height: 1)
                     .overlay(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                     .opacity(0.3)
                 Text("Or")
                     .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                     .font(.custom("Cochin", size: 20))
                 Rectangle()
-                    .frame(width: 120, height: 1)
+                    .frame(width: 160, height: 1)
                     .overlay(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                     .opacity(0.3)
             }
             .padding(.bottom, 20)
-
-            
             
             Button(action: {
                 Task {
@@ -118,7 +116,7 @@ struct SignUpView: View {
                 SignInWithAppleButtonViewRepresentable(type: .default, style: .black)
                     .allowsHitTesting(false)
             })
-            .frame(width: 280, height: 45)
+            .frame(width: 370, height: 45)
 
             GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .light, style: .wide, state: .normal)) {
                 Task {
@@ -130,7 +128,7 @@ struct SignUpView: View {
                     }
                 }
             }
-            .frame(width: 280, height: 45)
+            .frame(width: 370, height: 45)
             .buttonBorderShape(.roundedRectangle(radius: 20))
             
             Spacer()

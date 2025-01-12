@@ -14,7 +14,7 @@ struct FirstBaseView: View {
     var body: some View {
         ZStack {
             if isAuthenticated {
-                HomeView(isAuthenticated: $isAuthenticated)
+                MainTabScreenView(isAuthenticated: $isAuthenticated)
             } else {
                 StartView(isAuthenticated: $isAuthenticated)
             }
