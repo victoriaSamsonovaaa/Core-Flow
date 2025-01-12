@@ -6,6 +6,10 @@
 //
 
 import SwiftUI
+import GoogleSignIn
+import GoogleSignInSwift
+import AuthenticationServices
+import UIKit
 
 struct SignInView: View {
     @State private var viewModel = SignInViewViewModel()
@@ -83,38 +87,34 @@ struct SignInView: View {
                 }
             .padding(.bottom, 10)
             
-            HStack {
-                Spacer()
-                Button {
-                    
-                } label: {
-                    Image("facebook")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .scaledToFit()
+            Button(action: {
+                Task {
+                    do {
+                        try await viewModel.signUpWithApple()
+                        isAuthenticated = true
+                    } catch {
+                        
+                    }
                 }
-                
-                Button {
-                    
-                } label: {
-                    Image(systemName: "apple.logo")
-                        .resizable()
-                        .frame(width: 25.25, height: 30)
-                        .scaledToFit()
-                        .tint(Color.black)
+            }, label: {
+                SignInWithAppleButtonViewRepresentable(type: .default, style: .black)
+                    .allowsHitTesting(false)
+            })
+            .frame(width: 370, height: 45)
+            .padding(.bottom, 8)
+
+            GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .light, style: .wide, state: .normal)) {
+                Task {
+                    do {
+                        try await viewModel.signUpWithGoogle()
+                        isAuthenticated = true
+                    } catch {
+                        
+                    }
                 }
-                .padding(.horizontal)
-                
-                Button {
-                    
-                } label: {
-                    Image("google")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .scaledToFit()
-                }
-                Spacer()
             }
+            .frame(width: 370, height: 45)
+            .buttonBorderShape(.roundedRectangle(radius: 20))
         }
 
         .frame(maxWidth: .infinity, maxHeight: .infinity)
