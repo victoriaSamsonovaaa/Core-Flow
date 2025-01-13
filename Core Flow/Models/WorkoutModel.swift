@@ -8,9 +8,9 @@
 import Foundation
 
 struct WorkoutModel: Codable {
-    let back: [ExirciseModel]
-    let abs: [ExirciseModel]
-    let legs: [ExirciseModel]
-    let glutes: [ExirciseModel]
-    let arms: [ExirciseModel]
+    let back: [ExerciseModel]
+    let abs: [ExerciseModel]
+    let legs: [ExerciseModel]
+    let glutes: [ExerciseModel]
+    let arms: [ExerciseModel]
 }
