@@ -22,22 +22,9 @@
 		AFF470B32D2170FD00ACA175 /* Core Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Core Flow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		AFDE431D2D32CDA3009D0DF6 /* Exceptions for "Core Flow" folder in "Core Flow" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Core-Flow-Info.plist",
-			);
-			target = AFF470B22D2170FD00ACA175 /* Core Flow */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AFF470B52D2170FD00ACA175 /* Core Flow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				AFDE431D2D32CDA3009D0DF6 /* Exceptions for "Core Flow" folder in "Core Flow" target */,
-			);
 			path = "Core Flow";
 			sourceTree = "<group>";
 		};
