@@ -14,11 +14,13 @@
 		AFDE431B2D32CD65009D0DF6 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AFDE431A2D32CD65009D0DF6 /* GoogleSignInSwift */; };
 		AFDE431F2D32CE03009D0DF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFDE431E2D32CE03009D0DF6 /* GoogleService-Info.plist */; };
 		AFDE43252D32D204009D0DF6 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE43242D32D204009D0DF6 /* Utilities.swift */; };
+		AFE230622D35ABCA002F5B0E /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE230612D35ABCA002F5B0E /* Bundle-Decodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AFDE431E2D32CE03009D0DF6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AFDE43242D32D204009D0DF6 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		AFE230612D35ABCA002F5B0E /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		AFF470B32D2170FD00ACA175 /* Core Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Core Flow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				AFDE43242D32D204009D0DF6 /* Utilities.swift */,
+				AFE230612D35ABCA002F5B0E /* Bundle-Decodable.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE230622D35ABCA002F5B0E /* Bundle-Decodable.swift in Sources */,
 				AFDE43252D32D204009D0DF6 /* Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
