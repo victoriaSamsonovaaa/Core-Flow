@@ -18,13 +18,21 @@ struct WorkoutsView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-//                ForEach(workoutsByPart) { part in
-//                    ScrollView(.horizontal, showsIndicators: false) {
-//                        
-//                    }
-//                }
+                ForEach(workoutsByPart.muscle) { muscle in
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(muscle.exercises) { exercise in
+                                NavigationLink {
+                                    ExerciseView(exercise: exercise)
+                                } label: {
+                                    Image(systemName: "person")
+                                }
+                            }
+                        }
+                    }
+                }
             }
-            .navigationTitle("Moonshot")
+            .navigationTitle("Exercises")
             .background(Color(#colorLiteral(red: 0.3328896165, green: 0.4141520262, blue: 0.3390924037, alpha: 1)))
         }
     }
