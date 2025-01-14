@@ -24,9 +24,9 @@ struct MainTabScreenView: View {
                 }
                 .tag(Tab.home)
 
-            GoalsView()
+            WorkoutsView()
                 .tabItem {
-                    Label("Goals", systemImage: "list.bullet")
+                    Label("Workouts", systemImage: "list.bullet")
                 }
                 .tag(Tab.goals)
 
