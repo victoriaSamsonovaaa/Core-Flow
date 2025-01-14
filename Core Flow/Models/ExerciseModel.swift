@@ -8,7 +8,7 @@
 import Foundation
 
 struct ExerciseModel: Codable, Identifiable {
-    let id: Int
+    let id = UUID()
     let workoutName: String
     let workoutDescription: String
     let workoutExplanation: String

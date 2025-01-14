@@ -1,508 +1,463 @@
 {
-    "back": [
+    "muscle": [
         {
-          "id": 1,
-          "workoutName": "Swan Dive",
-          "workoutDescription": "Advanced back extension exercise combining strength and flexibility",
-          "workoutImage": "swan_dive.jpg",
-          "workoutDifficulty": 4,
-          "workoutExplanation": "Start lying prone, extend arms forward. Press palms down and lift upper body, creating a long arc. Keep legs active and hip bones grounded. Hold for 3-5 breaths, focusing on length through spine. This exercise strengthens entire back while improving spinal mobility."
+            "name": "back",
+            "exercises": [
+                {
+                  "workoutName": "Swan Dive",
+                  "workoutDescription": "Advanced back extension exercise combining strength and flexibility",
+                  "workoutImage": "swan_dive.jpg",
+                  "workoutDifficulty": 4,
+                  "workoutExplanation": "Start lying prone, extend arms forward. Press palms down and lift upper body, creating a long arc. Keep legs active and hip bones grounded. Hold for 3-5 breaths, focusing on length through spine. This exercise strengthens entire back while improving spinal mobility."
+                },
+                {
+                  "workoutName": "Spine Twist",
+                  "workoutDescription": "Seated rotation exercise for spinal mobility and back strength",
+                  "workoutImage": "spine_twist.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Sit tall with legs extended wide, arms at shoulder height. Rotate torso side to side while maintaining upright posture. Keep hips stable and spine long. This exercise improves thoracic mobility and strengthens deep back muscles."
+                },
+                {
+                  "workoutName": "Swimming",
+                  "workoutDescription": "Dynamic exercise for full back engagement and coordination",
+                  "workoutImage": "swimming.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Lie prone, lift arms and legs off mat. Alternate opposite arm and leg lifts in a swimming motion. Maintain steady breathing and core engagement. This exercise strengthens entire posterior chain while improving coordination."
+                },
+                {
+                  "workoutName": "Shell Stretch",
+                  "workoutDescription": "Restorative exercise for spinal flexibility",
+                  "workoutImage": "shell_stretch.jpg",
+                  "workoutDifficulty": 1,
+                  "workoutExplanation": "Kneel and sit back on heels, extend arms forward. Round spine and reach forward, creating length. Focus on breathing into back expansion. This exercise provides gentle stretch and promotes spinal mobility."
+                },
+                {
+                  "workoutName": "Cat-Cow Flow",
+                  "workoutDescription": "Dynamic spinal mobility exercise",
+                  "workoutImage": "cat_cow.jpg",
+                  "workoutDifficulty": 1,
+                  "workoutExplanation": "Start on hands and knees. Alternate between spinal flexion (Cat) and extension (Cow). Coordinate movement with breath. This exercise improves spinal mobility and strengthens core-back connection."
+                },
+                {
+                  "workoutName": "Dart",
+                  "workoutDescription": "Prone back strengthening exercise",
+                  "workoutImage": "dart.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Lie prone with arms by sides. Lift chest and arms, reaching back toward feet. Keep legs active and neck neutral. This exercise strengthens entire back while improving posture."
+                },
+                {
+                  "workoutName": "Rolling Like a Ball",
+                  "workoutDescription": "Massage and mobility exercise for spine",
+                  "workoutImage": "rolling_ball.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Balance on tailbone, holding backs of thighs. Roll back and return to balance, maintaining ball shape. This exercise massages spine while improving control and balance."
+                },
+                {
+                  "workoutName": "Saw",
+                  "workoutDescription": "Rotation and flexion exercise for spine",
+                  "workoutImage": "saw.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Sit with legs wide, rotate torso and reach to opposite foot. Add spinal flexion while maintaining rotation. This exercise combines flexibility with strength in rotational movement."
+                },
+                {
+                  "workoutName": "Double Leg Kick",
+                  "workoutDescription": "Dynamic back strengthening with leg engagement",
+                  "workoutImage": "double_leg_kick.jpg",
+                  "workoutDifficulty": 4,
+                  "workoutExplanation": "Lie prone, hands clasped behind back. Kick heels to buttocks three times, then extend and lift chest. This exercise combines back strength with hamstring flexibility."
+                },
+                {
+                  "workoutName": "Breast Stroke",
+                  "workoutDescription": "Swimming-inspired back extension exercise",
+                  "workoutImage": "breast_stroke.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Lie prone, extend arms forward. Lift chest while sweeping arms back, like swimming breaststroke. This exercise strengthens back while promoting shoulder mobility."
+                },
+                {
+                  "workoutName": "Rocking Preparation",
+                  "workoutDescription": "Gentle massage and mobility exercise for spine",
+                  "workoutImage": "rocking_prep.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Balance on tailbone with knees pulled to chest. Rock gently back and forth along spine. This exercise promotes spinal mobility and releases tension."
+                },
+                {
+                  "workoutName": "Child's Pose to Extension",
+                  "workoutDescription": "Dynamic flexibility exercise for spine",
+                  "workoutImage": "child_extension.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Alternate between Child's Pose and prone extension. Focus on smooth transitions and breath coordination. This exercise improves spinal flexibility and strength."
+                }
+            ]
         },
         {
-          "id": 2,
-          "workoutName": "Spine Twist",
-          "workoutDescription": "Seated rotation exercise for spinal mobility and back strength",
-          "workoutImage": "spine_twist.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Sit tall with legs extended wide, arms at shoulder height. Rotate torso side to side while maintaining upright posture. Keep hips stable and spine long. This exercise improves thoracic mobility and strengthens deep back muscles."
+            "name": "abs",
+            "exercises": [
+                {
+                  "workoutName": "The Hundred",
+                  "workoutDescription": "Classic Pilates core strengthening exercise",
+                  "workoutImage": "hundred.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Lie supine, lift head and legs, pump arms while maintaining hollow position. Complete 100 pumps with coordinated breathing. This exercise builds core strength and endurance."
+                },
+                {
+                  "workoutName": "Roll-Up",
+                  "workoutDescription": "Core control and flexibility exercise",
+                  "workoutImage": "roll_up.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Lie supine, extend arms overhead. Roll up one vertebra at a time, reaching forward over legs. Roll back down with control. This exercise strengthens abs and improves spinal mobility."
+                },
+                {
+                  "workoutName": "Double Leg Stretch",
+                  "workoutDescription": "Dynamic core and coordination exercise",
+                  "workoutImage": "double_leg_stretch.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Lie supine, knees hugged to chest. Extend arms and legs simultaneously, then return to start. Focus on maintaining core engagement. This exercise improves coordination and strengthens core."
+                },
+                {
+                  "workoutName": "Criss-Cross",
+                  "workoutDescription": "Rotational core exercise targeting obliques",
+                  "workoutImage": "criss_cross.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Lie supine, hands behind head. Alternate elbow to opposite knee, extending other leg. Maintain a smooth, controlled motion. This exercise strengthens obliques and enhances rotation."
+                },
+                {
+                  "workoutName": "Plank",
+                  "workoutDescription": "Full-body stability and core endurance exercise",
+                  "workoutImage": "plank.jpg",
+                  "workoutDifficulty": 4,
+                  "workoutExplanation": "Hold a straight line from head to heels in plank position. Keep core engaged and shoulders over wrists. This exercise builds core strength and stability."
+                },
+                {
+                  "workoutName": "Teaser",
+                  "workoutDescription": "Advanced core and balance exercise",
+                  "workoutImage": "teaser.jpg",
+                  "workoutDifficulty": 4,
+                  "workoutExplanation": "Lie supine, legs at tabletop. Roll up to balance on sitting bones with legs extended. Roll back down with control. This exercise improves core strength and control."
+                },
+                {
+                  "workoutName": "Leg Circles",
+                  "workoutDescription": "Core and hip mobility exercise",
+                  "workoutImage": "leg_circles.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Lie supine, one leg extended upward. Make small controlled circles while keeping hips stable. Switch legs. This exercise strengthens lower abs and enhances hip mobility."
+                },
+                {
+                  "workoutName": "Side Plank",
+                  "workoutDescription": "Core and oblique strengthening exercise",
+                  "workoutImage": "side_plank.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Balance on one forearm and side of foot. Keep body in a straight line. This exercise strengthens obliques and improves core stability."
+                },
+                {
+                  "workoutName": "Single Straight Leg Stretch",
+                  "workoutDescription": "Dynamic hamstring stretch with core engagement",
+                  "workoutImage": "single_leg_stretch.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Lie supine, one leg extended upward. Switch legs in a scissor-like motion, keeping core engaged. This exercise stretches hamstrings while strengthening core."
+                },
+                {
+                  "workoutName": "Rolling Pike",
+                  "workoutDescription": "Dynamic core and mobility exercise",
+                  "workoutImage": "rolling_pike.jpg",
+                  "workoutDifficulty": 4,
+                  "workoutExplanation": "Start in a seated pike position. Roll back, lift hips, and roll back to pike. This exercise strengthens abs and enhances spinal mobility."
+                },
+                {
+                  "workoutName": "Bicycle Crunch",
+                  "workoutDescription": "Classic oblique strengthening exercise",
+                  "workoutImage": "bicycle_crunch.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Lie supine, hands behind head. Alternate opposite elbow to knee in a pedaling motion. This exercise targets obliques and improves core endurance."
+                },
+                {
+                  "workoutName": "Plank to Pike",
+                  "workoutDescription": "Dynamic core and shoulder exercise",
+                  "workoutImage": "plank_pike.jpg",
+                  "workoutDifficulty": 4,
+                  "workoutExplanation": "Start in plank. Lift hips to a pike position, then return to plank. This exercise builds core strength while improving flexibility."
+                }
+            ]
         },
         {
-          "id": 3,
-          "workoutName": "Swimming",
-          "workoutDescription": "Dynamic exercise for full back engagement and coordination",
-          "workoutImage": "swimming.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Lie prone, lift arms and legs off mat. Alternate opposite arm and leg lifts in a swimming motion. Maintain steady breathing and core engagement. This exercise strengthens entire posterior chain while improving coordination."
+            "name": "legs",
+            "exercises": [
+                {
+                  "workoutName": "Lunges",
+                  "workoutDescription": "Dynamic lower-body strengthening exercise",
+                  "workoutImage": "lunges.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Step forward with one foot, lowering hips until both knees are at 90 degrees. Return to start and switch legs. This exercise strengthens quads, hamstrings, and glutes."
+                },
+                {
+                  "workoutName": "Leg Pull Front",
+                  "workoutDescription": "Core and leg stability exercise",
+                  "workoutImage": "leg_pull_front.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Start in a plank position. Lift one leg off the ground, keeping body stable. Lower and switch legs. This exercise strengthens thighs and improves balance."
+                },
+                {
+                  "workoutName": "Bridge",
+                  "workoutDescription": "Glute and hamstring strengthening exercise",
+                  "workoutImage": "bridge.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Lie supine, feet hip-width apart. Lift hips to form a straight line from knees to shoulders. Lower back down. This exercise targets glutes and hamstrings."
+                },
+                {
+                  "workoutName": "Leg Circles on Side",
+                  "workoutDescription": "Hip mobility and thigh strengthening exercise",
+                  "workoutImage": "side_leg_circles.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Lie on one side, top leg extended. Make small circles with top leg, keeping core stable. Switch sides. This exercise improves hip mobility and tones thighs."
+                },
+                {
+                  "workoutName": "Wall Sit",
+                  "workoutDescription": "Static lower-body endurance exercise",
+                  "workoutImage": "wall_sit.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Stand against a wall, slide down until knees form a 90-degree angle. Hold the position. This exercise builds strength in quads and endurance."
+                },
+                {
+                  "workoutName": "Calf Raises",
+                  "workoutDescription": "Lower leg strengthening exercise",
+                  "workoutImage": "calf_raises.jpg",
+                  "workoutDifficulty": 1,
+                  "workoutExplanation": "Stand tall, rise onto balls of feet, then lower back down. Repeat with control. This exercise strengthens calves and improves ankle stability."
+                },
+                {
+                  "workoutName": "Squats",
+                  "workoutDescription": "Classic full-leg strengthening exercise",
+                  "workoutImage": "squats.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Stand with feet shoulder-width apart. Lower hips back and down, then return to standing. Keep chest lifted. This exercise targets quads, hamstrings, and glutes."
+                },
+                {
+                  "workoutName": "Leg Kickbacks",
+                  "workoutDescription": "Glute-focused leg strengthening exercise",
+                  "workoutImage": "leg_kickbacks.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Start on hands and knees. Extend one leg back and up. Lower with control, then switch sides. This exercise targets glutes and hamstrings."
+                },
+                {
+                  "workoutName": "Step-Ups",
+                  "workoutDescription": "Dynamic lower-body strengthening exercise",
+                  "workoutImage": "step_ups.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Step onto a raised surface with one foot, then bring the other foot up. Step back down and switch legs. This exercise strengthens thighs and glutes."
+                },
+                {
+                  "workoutName": "Side Lunges",
+                  "workoutDescription": "Lateral leg and hip strengthening exercise",
+                  "workoutImage": "side_lunges.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Step to the side, bending one knee while keeping the other leg straight. Return to center and switch sides. This exercise strengthens inner and outer thighs."
+                },
+                {
+                  "workoutName": "Single-Leg Deadlift",
+                  "workoutDescription": "Balance and hamstring strengthening exercise",
+                  "workoutImage": "single_leg_deadlift.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Stand on one leg, hinge at hips to lower torso while extending the other leg back. Return to standing. This exercise strengthens hamstrings and improves balance."
+                }
+            ]
         },
         {
-          "id": 4,
-          "workoutName": "Shell Stretch",
-          "workoutDescription": "Restorative exercise for spinal flexibility",
-          "workoutImage": "shell_stretch.jpg",
-          "workoutDifficulty": 1,
-          "workoutExplanation": "Kneel and sit back on heels, extend arms forward. Round spine and reach forward, creating length. Focus on breathing into back expansion. This exercise provides gentle stretch and promotes spinal mobility."
+            "name": "glutes",
+            "exercises": [
+                {
+                  "workoutName": "Donkey Kicks",
+                  "workoutDescription": "Isolated glute strengthening exercise",
+                  "workoutImage": "donkey_kicks.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Start on hands and knees. Kick one leg up and back, keeping knee bent. Lower and repeat on the other side. This exercise targets glutes."
+                },
+                {
+                  "workoutName": "Glute Bridge March",
+                  "workoutDescription": "Dynamic glute and core exercise",
+                  "workoutImage": "glute_bridge_march.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Perform a glute bridge and alternate lifting one foot off the floor. Keep hips stable. This exercise strengthens glutes and engages the core."
+                },
+                {
+                  "workoutName": "Side-Lying Leg Lifts",
+                  "workoutDescription": "Outer glute and hip strengthening exercise",
+                  "workoutImage": "side_lying_leg_lifts.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Lie on one side, legs stacked. Lift the top leg, keeping hips stable. Lower and repeat. This exercise strengthens glutes and improves hip stability."
+                },
+                {
+                  "workoutName": "Bulgarian Split Squats",
+                  "workoutDescription": "Single-leg glute and quad strengthening exercise",
+                  "workoutImage": "bulgarian_split_squats.jpg",
+                  "workoutDifficulty": 4,
+                  "workoutExplanation": "Place one foot on a raised surface behind you. Lower hips until the front knee is at 90 degrees. Return to standing. This exercise builds strength and balance."
+                },
+                {
+                  "workoutName": "Hip Thrusts",
+                  "workoutDescription": "Intense glute strengthening exercise",
+                  "workoutImage": "hip_thrusts.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Sit against a bench, shoulders supported. Push hips up to form a straight line from shoulders to knees. Lower and repeat. This exercise isolates glutes."
+                },
+                {
+                  "workoutName": "Fire Hydrant",
+                  "workoutDescription": "Glute and hip mobility exercise",
+                  "workoutImage": "fire_hydrant.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Start on hands and knees. Lift one knee out to the side while keeping hips stable. Lower and repeat on the other side. This exercise targets glute medius."
+                },
+                {
+                  "workoutName": "Step-Ups with Kickback",
+                  "workoutDescription": "Dynamic glute and hamstring exercise",
+                  "workoutImage": "step_ups_kickback.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Step onto a raised surface, then extend the other leg back in a kick. Return to start and switch legs. This exercise strengthens glutes and hamstrings."
+                },
+                {
+                  "workoutName": "Clamshells",
+                  "workoutDescription": "Inner and outer glute strengthening exercise",
+                  "workoutImage": "clamshells.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Lie on one side with knees bent. Lift the top knee while keeping feet together. Lower and repeat. This exercise strengthens glutes and stabilizes hips."
+                },
+                {
+                  "workoutName": "Frog Pumps",
+                  "workoutDescription": "Glute activation exercise",
+                  "workoutImage": "frog_pumps.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Lie on your back, feet together and knees apart. Perform small glute bridges with hips. This exercise activates and strengthens glutes."
+                },
+                {
+                  "workoutName": "Sumo Squats",
+                  "workoutDescription": "Wide-stance squat for glute and inner thigh activation",
+                  "workoutImage": "sumo_squats.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Stand with feet wider than shoulders, toes pointing out. Lower hips into a squat. Return to standing. This exercise targets glutes and inner thighs."
+                },
+                {
+                  "workoutName": "Bridge with Band",
+                  "workoutDescription": "Glute isolation with resistance band",
+                  "workoutImage": "bridge_with_band.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Perform a glute bridge with a resistance band around thighs. Push knees outward against the band. This exercise strengthens glutes and improves stability."
+                },
+                {
+                  "workoutName": "Kickstand Deadlift",
+                  "workoutDescription": "Glute and hamstring focus with single-leg support",
+                  "workoutImage": "kickstand_deadlift.jpg",
+                  "workoutDifficulty": 3,
+                  "workoutExplanation": "Hinge at hips while keeping one leg slightly bent behind for balance. Return to standing. This exercise strengthens glutes and improves balance."
+                },
+                {
+                  "workoutName": "Reverse Lunges",
+                  "workoutDescription": "Glute and quad strengthening exercise",
+                  "workoutImage": "reverse_lunges.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Step one leg back into a lunge position, then return to standing. Switch legs. This exercise strengthens glutes, quads, and hamstrings."
+                },
+                {
+                  "workoutName": "Lateral Band Walks",
+                  "workoutDescription": "Side-stepping glute activation exercise",
+                  "workoutImage": "lateral_band_walks.jpg",
+                  "workoutDifficulty": 2,
+                  "workoutExplanation": "Place a resistance band around thighs. Step side-to-side while maintaining tension in the band. This exercise strengthens glutes and improves hip stability."
+                }
+            ]
         },
         {
-          "id": 5,
-          "workoutName": "Cat-Cow Flow",
-          "workoutDescription": "Dynamic spinal mobility exercise",
-          "workoutImage": "cat_cow.jpg",
-          "workoutDifficulty": 1,
-          "workoutExplanation": "Start on hands and knees. Alternate between spinal flexion (Cat) and extension (Cow). Coordinate movement with breath. This exercise improves spinal mobility and strengthens core-back connection."
-        },
-        {
-          "id": 6,
-          "workoutName": "Dart",
-          "workoutDescription": "Prone back strengthening exercise",
-          "workoutImage": "dart.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Lie prone with arms by sides. Lift chest and arms, reaching back toward feet. Keep legs active and neck neutral. This exercise strengthens entire back while improving posture."
-        },
-        {
-          "id": 7,
-          "workoutName": "Rolling Like a Ball",
-          "workoutDescription": "Massage and mobility exercise for spine",
-          "workoutImage": "rolling_ball.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Balance on tailbone, holding backs of thighs. Roll back and return to balance, maintaining ball shape. This exercise massages spine while improving control and balance."
-        },
-        {
-          "id": 8,
-          "workoutName": "Saw",
-          "workoutDescription": "Rotation and flexion exercise for spine",
-          "workoutImage": "saw.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Sit with legs wide, rotate torso and reach to opposite foot. Add spinal flexion while maintaining rotation. This exercise combines flexibility with strength in rotational movement."
-        },
-        {
-          "id": 9,
-          "workoutName": "Double Leg Kick",
-          "workoutDescription": "Dynamic back strengthening with leg engagement",
-          "workoutImage": "double_leg_kick.jpg",
-          "workoutDifficulty": 4,
-          "workoutExplanation": "Lie prone, hands clasped behind back. Kick heels to buttocks three times, then extend and lift chest. This exercise combines back strength with hamstring flexibility."
-        },
-        {
-          "id": 10,
-          "workoutName": "Breast Stroke",
-          "workoutDescription": "Swimming-inspired back extension exercise",
-          "workoutImage": "breast_stroke.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Lie prone, extend arms forward. Lift chest while sweeping arms back, like swimming breaststroke. This exercise strengthens back while promoting shoulder mobility."
-        },
-        {
-          "id": 11,
-          "workoutName": "Rocking Preparation",
-          "workoutDescription": "Gentle massage and mobility exercise for spine",
-          "workoutImage": "rocking_prep.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Balance on tailbone with knees pulled to chest. Rock gently back and forth along spine. This exercise promotes spinal mobility and releases tension."
-        },
-        {
-          "id": 12,
-          "workoutName": "Child's Pose to Extension",
-          "workoutDescription": "Dynamic flexibility exercise for spine",
-          "workoutImage": "child_extension.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Alternate between Child's Pose and prone extension. Focus on smooth transitions and breath coordination. This exercise improves spinal flexibility and strength."
+           "name": "arms",
+           "exercises": [
+               {
+                 "workoutName": "Push-Ups",
+                 "workoutDescription": "Classic upper-body and core exercise",
+                 "workoutImage": "push_ups.jpg",
+                 "workoutDifficulty": 3,
+                 "workoutExplanation": "Start in a plank position. Lower body until elbows are at 90 degrees, then push back up. This exercise strengthens chest, arms, and shoulders."
+               },
+               {
+                 "workoutName": "Tricep Dips",
+                 "workoutDescription": "Tricep-focused strengthening exercise",
+                 "workoutImage": "tricep_dips.jpg",
+                 "workoutDifficulty": 2,
+                 "workoutExplanation": "Sit on a bench, hands next to hips. Lower hips by bending elbows, then push back up. This exercise targets triceps and shoulders."
+               },
+               {
+                 "workoutName": "Plank Shoulder Taps",
+                 "workoutDescription": "Dynamic stability and arm strength exercise",
+                 "workoutImage": "plank_shoulder_taps.jpg",
+                 "workoutDifficulty": 3,
+                 "workoutExplanation": "In a plank position, lift one hand to tap the opposite shoulder. Alternate sides while keeping hips stable. This exercise strengthens shoulders and core."
+               },
+               {
+                 "workoutName": "Bicep Curls",
+                 "workoutDescription": "Classic arm strengthening exercise",
+                 "workoutImage": "bicep_curls.jpg",
+                 "workoutDifficulty": 2,
+                 "workoutExplanation": "Hold weights or resistance bands. Curl hands toward shoulders while keeping elbows close to body. This exercise strengthens biceps."
+               },
+               {
+                 "workoutName": "Plank to Push-Up",
+                 "workoutDescription": "Dynamic upper-body and core exercise",
+                 "workoutImage": "plank_to_pushup.jpg",
+                 "workoutDifficulty": 4,
+                 "workoutExplanation": "Start in a forearm plank. Push up into a full plank one arm at a time, then lower back. This exercise builds strength in arms and shoulders."
+               },
+               {
+                 "workoutName": "Overhead Tricep Extension",
+                 "workoutDescription": "Isolated tricep strengthening exercise",
+                 "workoutImage": "overhead_tricep_extension.jpg",
+                 "workoutDifficulty": 2,
+                 "workoutExplanation": "Hold a weight overhead with both hands. Lower it behind the head, then extend back up. This exercise targets triceps."
+               },
+               {
+                 "workoutName": "Plank Rows",
+                 "workoutDescription": "Upper-body and core engagement exercise",
+                 "workoutImage": "plank_rows.jpg",
+                 "workoutDifficulty": 4,
+                 "workoutExplanation": "Start in a plank holding dumbbells. Pull one dumbbell toward your waist while keeping stable. Alternate arms. This exercise strengthens arms, shoulders, and back."
+               },
+               {
+                 "workoutName": "Side Plank with Reach",
+                 "workoutDescription": "Oblique and arm exercise",
+                 "workoutImage": "side_plank_reach.jpg",
+                 "workoutDifficulty": 3,
+                 "workoutExplanation": "Perform a side plank. Extend top arm under the torso and return to start. This exercise strengthens arms and obliques."
+               },
+               {
+                 "workoutName": "Diamond Push-Ups",
+                 "workoutDescription": "Tricep-focused push-up variation",
+                 "workoutImage": "diamond_pushups.jpg",
+                 "workoutDifficulty": 4,
+                 "workoutExplanation": "Place hands close together in a diamond shape under the chest. Perform push-ups. This exercise targets triceps and chest."
+               },
+               {
+                 "workoutName": "Up-Down Plank",
+                 "workoutDescription": "Dynamic arm and core exercise",
+                 "workoutImage": "up_down_plank.jpg",
+                 "workoutDifficulty": 4,
+                 "workoutExplanation": "Move from a forearm plank to a full plank position, alternating arms. Lower back down and repeat. This exercise strengthens arms, shoulders, and core."
+               },
+               {
+                 "workoutName": "Arnold Press",
+                 "workoutDescription": "Shoulder and arm strengthening exercise",
+                 "workoutImage": "arnold_press.jpg",
+                 "workoutDifficulty": 3,
+                 "workoutExplanation": "Hold dumbbells at shoulder height with palms facing you. Rotate palms outward while pressing weights overhead, then return to start. This exercise targets shoulders and arms."
+               },
+               {
+                 "workoutName": "Reverse Plank",
+                 "workoutDescription": "Triceps and posterior chain strengthening exercise",
+                 "workoutImage": "reverse_plank.jpg",
+                 "workoutDifficulty": 3,
+                 "workoutExplanation": "Sit on the floor, hands behind hips. Lift hips to form a straight line from shoulders to heels. Hold this position to strengthen triceps and the back."
+               },
+               {
+                 "workoutName": "Lateral Raises",
+                 "workoutDescription": "Isolated shoulder strengthening exercise",
+                 "workoutImage": "lateral_raises.jpg",
+                 "workoutDifficulty": 2,
+                 "workoutExplanation": "Hold weights at your sides. Raise arms laterally to shoulder height, then lower back down. This exercise strengthens the shoulders."
+               }
+            ]
         }
-      ],
-      "abs": [
-        {
-          "id": 13,
-          "workoutName": "The Hundred",
-          "workoutDescription": "Classic Pilates core strengthening exercise",
-          "workoutImage": "hundred.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Lie supine, lift head and legs, pump arms while maintaining hollow position. Complete 100 pumps with coordinated breathing. This exercise builds core strength and endurance."
-        },
-        {
-          "id": 14,
-          "workoutName": "Roll-Up",
-          "workoutDescription": "Core control and flexibility exercise",
-          "workoutImage": "roll_up.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Lie supine, extend arms overhead. Roll up one vertebra at a time, reaching forward over legs. Roll back down with control. This exercise strengthens abs and improves spinal mobility."
-        },
-        {
-          "id": 15,
-          "workoutName": "Double Leg Stretch",
-          "workoutDescription": "Dynamic core and coordination exercise",
-          "workoutImage": "double_leg_stretch.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Lie supine, knees hugged to chest. Extend arms and legs simultaneously, then return to start. Focus on maintaining core engagement. This exercise improves coordination and strengthens core."
-        },
-        {
-          "id": 16,
-          "workoutName": "Criss-Cross",
-          "workoutDescription": "Rotational core exercise targeting obliques",
-          "workoutImage": "criss_cross.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Lie supine, hands behind head. Alternate elbow to opposite knee, extending other leg. Maintain a smooth, controlled motion. This exercise strengthens obliques and enhances rotation."
-        },
-        {
-          "id": 17,
-          "workoutName": "Plank",
-          "workoutDescription": "Full-body stability and core endurance exercise",
-          "workoutImage": "plank.jpg",
-          "workoutDifficulty": 4,
-          "workoutExplanation": "Hold a straight line from head to heels in plank position. Keep core engaged and shoulders over wrists. This exercise builds core strength and stability."
-        },
-        {
-          "id": 18,
-          "workoutName": "Teaser",
-          "workoutDescription": "Advanced core and balance exercise",
-          "workoutImage": "teaser.jpg",
-          "workoutDifficulty": 4,
-          "workoutExplanation": "Lie supine, legs at tabletop. Roll up to balance on sitting bones with legs extended. Roll back down with control. This exercise improves core strength and control."
-        },
-        {
-          "id": 19,
-          "workoutName": "Leg Circles",
-          "workoutDescription": "Core and hip mobility exercise",
-          "workoutImage": "leg_circles.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Lie supine, one leg extended upward. Make small controlled circles while keeping hips stable. Switch legs. This exercise strengthens lower abs and enhances hip mobility."
-        },
-        {
-          "id": 20,
-          "workoutName": "Side Plank",
-          "workoutDescription": "Core and oblique strengthening exercise",
-          "workoutImage": "side_plank.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Balance on one forearm and side of foot. Keep body in a straight line. This exercise strengthens obliques and improves core stability."
-        },
-        {
-          "id": 21,
-          "workoutName": "Single Straight Leg Stretch",
-          "workoutDescription": "Dynamic hamstring stretch with core engagement",
-          "workoutImage": "single_leg_stretch.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Lie supine, one leg extended upward. Switch legs in a scissor-like motion, keeping core engaged. This exercise stretches hamstrings while strengthening core."
-        },
-        {
-          "id": 22,
-          "workoutName": "Rolling Pike",
-          "workoutDescription": "Dynamic core and mobility exercise",
-          "workoutImage": "rolling_pike.jpg",
-          "workoutDifficulty": 4,
-          "workoutExplanation": "Start in a seated pike position. Roll back, lift hips, and roll back to pike. This exercise strengthens abs and enhances spinal mobility."
-        },
-        {
-          "id": 23,
-          "workoutName": "Bicycle Crunch",
-          "workoutDescription": "Classic oblique strengthening exercise",
-          "workoutImage": "bicycle_crunch.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Lie supine, hands behind head. Alternate opposite elbow to knee in a pedaling motion. This exercise targets obliques and improves core endurance."
-        },
-        {
-          "id": 24,
-          "workoutName": "Plank to Pike",
-          "workoutDescription": "Dynamic core and shoulder exercise",
-          "workoutImage": "plank_pike.jpg",
-          "workoutDifficulty": 4,
-          "workoutExplanation": "Start in plank. Lift hips to a pike position, then return to plank. This exercise builds core strength while improving flexibility."
-        }
-      ],
-      "legs": [
-        {
-          "id": 25,
-          "workoutName": "Lunges",
-          "workoutDescription": "Dynamic lower-body strengthening exercise",
-          "workoutImage": "lunges.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Step forward with one foot, lowering hips until both knees are at 90 degrees. Return to start and switch legs. This exercise strengthens quads, hamstrings, and glutes."
-        },
-        {
-          "id": 26,
-          "workoutName": "Leg Pull Front",
-          "workoutDescription": "Core and leg stability exercise",
-          "workoutImage": "leg_pull_front.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Start in a plank position. Lift one leg off the ground, keeping body stable. Lower and switch legs. This exercise strengthens thighs and improves balance."
-        },
-        {
-          "id": 27,
-          "workoutName": "Bridge",
-          "workoutDescription": "Glute and hamstring strengthening exercise",
-          "workoutImage": "bridge.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Lie supine, feet hip-width apart. Lift hips to form a straight line from knees to shoulders. Lower back down. This exercise targets glutes and hamstrings."
-        },
-        {
-          "id": 28,
-          "workoutName": "Leg Circles on Side",
-          "workoutDescription": "Hip mobility and thigh strengthening exercise",
-          "workoutImage": "side_leg_circles.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Lie on one side, top leg extended. Make small circles with top leg, keeping core stable. Switch sides. This exercise improves hip mobility and tones thighs."
-        },
-        {
-          "id": 29,
-          "workoutName": "Wall Sit",
-          "workoutDescription": "Static lower-body endurance exercise",
-          "workoutImage": "wall_sit.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Stand against a wall, slide down until knees form a 90-degree angle. Hold the position. This exercise builds strength in quads and endurance."
-        },
-        {
-          "id": 30,
-          "workoutName": "Calf Raises",
-          "workoutDescription": "Lower leg strengthening exercise",
-          "workoutImage": "calf_raises.jpg",
-          "workoutDifficulty": 1,
-          "workoutExplanation": "Stand tall, rise onto balls of feet, then lower back down. Repeat with control. This exercise strengthens calves and improves ankle stability."
-        },
-        {
-          "id": 31,
-          "workoutName": "Squats",
-          "workoutDescription": "Classic full-leg strengthening exercise",
-          "workoutImage": "squats.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Stand with feet shoulder-width apart. Lower hips back and down, then return to standing. Keep chest lifted. This exercise targets quads, hamstrings, and glutes."
-        },
-        {
-          "id": 32,
-          "workoutName": "Leg Kickbacks",
-          "workoutDescription": "Glute-focused leg strengthening exercise",
-          "workoutImage": "leg_kickbacks.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Start on hands and knees. Extend one leg back and up. Lower with control, then switch sides. This exercise targets glutes and hamstrings."
-        },
-        {
-          "id": 33,
-          "workoutName": "Step-Ups",
-          "workoutDescription": "Dynamic lower-body strengthening exercise",
-          "workoutImage": "step_ups.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Step onto a raised surface with one foot, then bring the other foot up. Step back down and switch legs. This exercise strengthens thighs and glutes."
-        },
-        {
-          "id": 34,
-          "workoutName": "Side Lunges",
-          "workoutDescription": "Lateral leg and hip strengthening exercise",
-          "workoutImage": "side_lunges.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Step to the side, bending one knee while keeping the other leg straight. Return to center and switch sides. This exercise strengthens inner and outer thighs."
-        },
-        {
-          "id": 35,
-          "workoutName": "Single-Leg Deadlift",
-          "workoutDescription": "Balance and hamstring strengthening exercise",
-          "workoutImage": "single_leg_deadlift.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Stand on one leg, hinge at hips to lower torso while extending the other leg back. Return to standing. This exercise strengthens hamstrings and improves balance."
-        }
-      ],
-      "glutes": [
-        {
-          "id": 36,
-          "workoutName": "Donkey Kicks",
-          "workoutDescription": "Isolated glute strengthening exercise",
-          "workoutImage": "donkey_kicks.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Start on hands and knees. Kick one leg up and back, keeping knee bent. Lower and repeat on the other side. This exercise targets glutes."
-        },
-        {
-          "id": 37,
-          "workoutName": "Glute Bridge March",
-          "workoutDescription": "Dynamic glute and core exercise",
-          "workoutImage": "glute_bridge_march.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Perform a glute bridge and alternate lifting one foot off the floor. Keep hips stable. This exercise strengthens glutes and engages the core."
-        },
-        {
-          "id": 38,
-          "workoutName": "Side-Lying Leg Lifts",
-          "workoutDescription": "Outer glute and hip strengthening exercise",
-          "workoutImage": "side_lying_leg_lifts.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Lie on one side, legs stacked. Lift the top leg, keeping hips stable. Lower and repeat. This exercise strengthens glutes and improves hip stability."
-        },
-        {
-          "id": 39,
-          "workoutName": "Bulgarian Split Squats",
-          "workoutDescription": "Single-leg glute and quad strengthening exercise",
-          "workoutImage": "bulgarian_split_squats.jpg",
-          "workoutDifficulty": 4,
-          "workoutExplanation": "Place one foot on a raised surface behind you. Lower hips until the front knee is at 90 degrees. Return to standing. This exercise builds strength and balance."
-        },
-        {
-          "id": 40,
-          "workoutName": "Hip Thrusts",
-          "workoutDescription": "Intense glute strengthening exercise",
-          "workoutImage": "hip_thrusts.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Sit against a bench, shoulders supported. Push hips up to form a straight line from shoulders to knees. Lower and repeat. This exercise isolates glutes."
-        },
-        {
-          "id": 41,
-          "workoutName": "Fire Hydrant",
-          "workoutDescription": "Glute and hip mobility exercise",
-          "workoutImage": "fire_hydrant.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Start on hands and knees. Lift one knee out to the side while keeping hips stable. Lower and repeat on the other side. This exercise targets glute medius."
-        },
-        {
-          "id": 42,
-          "workoutName": "Step-Ups with Kickback",
-          "workoutDescription": "Dynamic glute and hamstring exercise",
-          "workoutImage": "step_ups_kickback.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Step onto a raised surface, then extend the other leg back in a kick. Return to start and switch legs. This exercise strengthens glutes and hamstrings."
-        },
-        {
-          "id": 43,
-          "workoutName": "Clamshells",
-          "workoutDescription": "Inner and outer glute strengthening exercise",
-          "workoutImage": "clamshells.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Lie on one side with knees bent. Lift the top knee while keeping feet together. Lower and repeat. This exercise strengthens glutes and stabilizes hips."
-        },
-        {
-          "id": 44,
-          "workoutName": "Frog Pumps",
-          "workoutDescription": "Glute activation exercise",
-          "workoutImage": "frog_pumps.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Lie on your back, feet together and knees apart. Perform small glute bridges with hips. This exercise activates and strengthens glutes."
-        },
-        {
-          "id": 45,
-          "workoutName": "Sumo Squats",
-          "workoutDescription": "Wide-stance squat for glute and inner thigh activation",
-          "workoutImage": "sumo_squats.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Stand with feet wider than shoulders, toes pointing out. Lower hips into a squat. Return to standing. This exercise targets glutes and inner thighs."
-        },
-        {
-          "id": 46,
-          "workoutName": "Bridge with Band",
-          "workoutDescription": "Glute isolation with resistance band",
-          "workoutImage": "bridge_with_band.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Perform a glute bridge with a resistance band around thighs. Push knees outward against the band. This exercise strengthens glutes and improves stability."
-        },
-        {
-          "id": 47,
-          "workoutName": "Kickstand Deadlift",
-          "workoutDescription": "Glute and hamstring focus with single-leg support",
-          "workoutImage": "kickstand_deadlift.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Hinge at hips while keeping one leg slightly bent behind for balance. Return to standing. This exercise strengthens glutes and improves balance."
-        },
-        {
-          "id": 48,
-          "workoutName": "Reverse Lunges",
-          "workoutDescription": "Glute and quad strengthening exercise",
-          "workoutImage": "reverse_lunges.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Step one leg back into a lunge position, then return to standing. Switch legs. This exercise strengthens glutes, quads, and hamstrings."
-        },
-        {
-          "id": 49,
-          "workoutName": "Lateral Band Walks",
-          "workoutDescription": "Side-stepping glute activation exercise",
-          "workoutImage": "lateral_band_walks.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Place a resistance band around thighs. Step side-to-side while maintaining tension in the band. This exercise strengthens glutes and improves hip stability."
-        }
-      ],
-      "arms": [
-        {
-          "id": 51,
-          "workoutName": "Push-Ups",
-          "workoutDescription": "Classic upper-body and core exercise",
-          "workoutImage": "push_ups.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Start in a plank position. Lower body until elbows are at 90 degrees, then push back up. This exercise strengthens chest, arms, and shoulders."
-        },
-        {
-          "id": 52,
-          "workoutName": "Tricep Dips",
-          "workoutDescription": "Tricep-focused strengthening exercise",
-          "workoutImage": "tricep_dips.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Sit on a bench, hands next to hips. Lower hips by bending elbows, then push back up. This exercise targets triceps and shoulders."
-        },
-        {
-          "id": 53,
-          "workoutName": "Plank Shoulder Taps",
-          "workoutDescription": "Dynamic stability and arm strength exercise",
-          "workoutImage": "plank_shoulder_taps.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "In a plank position, lift one hand to tap the opposite shoulder. Alternate sides while keeping hips stable. This exercise strengthens shoulders and core."
-        },
-        {
-          "id": 54,
-          "workoutName": "Bicep Curls",
-          "workoutDescription": "Classic arm strengthening exercise",
-          "workoutImage": "bicep_curls.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Hold weights or resistance bands. Curl hands toward shoulders while keeping elbows close to body. This exercise strengthens biceps."
-        },
-        {
-          "id": 55,
-          "workoutName": "Plank to Push-Up",
-          "workoutDescription": "Dynamic upper-body and core exercise",
-          "workoutImage": "plank_to_pushup.jpg",
-          "workoutDifficulty": 4,
-          "workoutExplanation": "Start in a forearm plank. Push up into a full plank one arm at a time, then lower back. This exercise builds strength in arms and shoulders."
-        },
-        {
-          "id": 56,
-          "workoutName": "Overhead Tricep Extension",
-          "workoutDescription": "Isolated tricep strengthening exercise",
-          "workoutImage": "overhead_tricep_extension.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Hold a weight overhead with both hands. Lower it behind the head, then extend back up. This exercise targets triceps."
-        },
-        {
-          "id": 57,
-          "workoutName": "Plank Rows",
-          "workoutDescription": "Upper-body and core engagement exercise",
-          "workoutImage": "plank_rows.jpg",
-          "workoutDifficulty": 4,
-          "workoutExplanation": "Start in a plank holding dumbbells. Pull one dumbbell toward your waist while keeping stable. Alternate arms. This exercise strengthens arms, shoulders, and back."
-        },
-        {
-          "id": 58,
-          "workoutName": "Side Plank with Reach",
-          "workoutDescription": "Oblique and arm exercise",
-          "workoutImage": "side_plank_reach.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Perform a side plank. Extend top arm under the torso and return to start. This exercise strengthens arms and obliques."
-        },
-        {
-          "id": 59,
-          "workoutName": "Diamond Push-Ups",
-          "workoutDescription": "Tricep-focused push-up variation",
-          "workoutImage": "diamond_pushups.jpg",
-          "workoutDifficulty": 4,
-          "workoutExplanation": "Place hands close together in a diamond shape under the chest. Perform push-ups. This exercise targets triceps and chest."
-        },
-        {
-          "id": 60,
-          "workoutName": "Up-Down Plank",
-          "workoutDescription": "Dynamic arm and core exercise",
-          "workoutImage": "up_down_plank.jpg",
-          "workoutDifficulty": 4,
-          "workoutExplanation": "Move from a forearm plank to a full plank position, alternating arms. Lower back down and repeat. This exercise strengthens arms, shoulders, and core."
-        },
-        {
-          "id": 61,
-          "workoutName": "Arnold Press",
-          "workoutDescription": "Shoulder and arm strengthening exercise",
-          "workoutImage": "arnold_press.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Hold dumbbells at shoulder height with palms facing you. Rotate palms outward while pressing weights overhead, then return to start. This exercise targets shoulders and arms."
-        },
-        {
-          "id": 62,
-          "workoutName": "Reverse Plank",
-          "workoutDescription": "Triceps and posterior chain strengthening exercise",
-          "workoutImage": "reverse_plank.jpg",
-          "workoutDifficulty": 3,
-          "workoutExplanation": "Sit on the floor, hands behind hips. Lift hips to form a straight line from shoulders to heels. Hold this position to strengthen triceps and the back."
-        },
-        {
-          "id": 63,
-          "workoutName": "Lateral Raises",
-          "workoutDescription": "Isolated shoulder strengthening exercise",
-          "workoutImage": "lateral_raises.jpg",
-          "workoutDifficulty": 2,
-          "workoutExplanation": "Hold weights at your sides. Raise arms laterally to shoulder height, then lower back down. This exercise strengthens the shoulders."
-        }
-      ]
+    ]
 }

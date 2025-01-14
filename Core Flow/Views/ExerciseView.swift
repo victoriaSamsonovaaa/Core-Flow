@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExerciseView: View {
     let exercise: ExerciseModel
+    let workoutsByPart: WorkoutModel = Bundle.main.decode("workouts.json")
     
     var body: some View {
         NavigationView {
@@ -61,6 +62,6 @@ struct ExerciseView: View {
 }
 
 #Preview {
-    let workouts: WorkoutModel = Bundle.main.decode("workouts.json")
-    return ExerciseView(exercise: workouts.back[4])
+    let workoutsByPart: WorkoutModel = Bundle.main.decode("workouts.json")
+    return ExerciseView(exercise: workoutsByPart.muscle[0].exercises[4])
 }
