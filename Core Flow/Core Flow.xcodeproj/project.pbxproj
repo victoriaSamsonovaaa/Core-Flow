@@ -10,6 +10,7 @@
 		AF4F491D2D22B19600CA0E34 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = AF4F491C2D22B19600CA0E34 /* FirebaseAnalytics */; };
 		AF4F491F2D22B19600CA0E34 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AF4F491E2D22B19600CA0E34 /* FirebaseAuth */; };
 		AF4F49212D22B19600CA0E34 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AF4F49202D22B19600CA0E34 /* FirebaseAuthCombine-Community */; };
+		AF5041972D3801EB009109DB /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5041962D3801EB009109DB /* ViewExtensions.swift */; };
 		AFDE43192D32CD65009D0DF6 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = AFDE43182D32CD65009D0DF6 /* GoogleSignIn */; };
 		AFDE431B2D32CD65009D0DF6 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AFDE431A2D32CD65009D0DF6 /* GoogleSignInSwift */; };
 		AFDE431F2D32CE03009D0DF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFDE431E2D32CE03009D0DF6 /* GoogleService-Info.plist */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF5041962D3801EB009109DB /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		AFDE431E2D32CE03009D0DF6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AFDE43242D32D204009D0DF6 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		AFE230612D35ABCA002F5B0E /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				AFDE43242D32D204009D0DF6 /* Utilities.swift */,
 				AFE230612D35ABCA002F5B0E /* Bundle-Decodable.swift */,
+				AF5041962D3801EB009109DB /* ViewExtensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFE230622D35ABCA002F5B0E /* Bundle-Decodable.swift in Sources */,
+				AF5041972D3801EB009109DB /* ViewExtensions.swift in Sources */,
 				AFDE43252D32D204009D0DF6 /* Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
