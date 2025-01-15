@@ -1,7 +1,7 @@
 {
     "muscle": [
         {
-            "name": "back",
+            "name": "Back",
             "exercises": [
                 {
                   "workoutName": "Swan Dive",
@@ -90,7 +90,7 @@
             ]
         },
         {
-            "name": "abs",
+            "name": "Abs",
             "exercises": [
                 {
                   "workoutName": "The Hundred",
@@ -179,7 +179,7 @@
             ]
         },
         {
-            "name": "legs",
+            "name": "Legs",
             "exercises": [
                 {
                   "workoutName": "Lunges",
@@ -261,7 +261,7 @@
             ]
         },
         {
-            "name": "glutes",
+            "name": "Glutes",
             "exercises": [
                 {
                   "workoutName": "Donkey Kicks",
@@ -364,7 +364,7 @@
             ]
         },
         {
-           "name": "arms",
+           "name": "Arms",
            "exercises": [
                {
                  "workoutName": "Push-Ups",
