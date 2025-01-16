@@ -21,9 +21,11 @@ struct WorkoutsView: View {
                 ForEach(workoutsByPart.muscle) { muscle in
                     VStack(alignment: .leading) {
                         Text(muscle.name)
-                            .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
-                            .font(.custom("Cochin-bold", size: 32))
-                            .padding(.vertical, 10)
+                            .foregroundStyle(.white)
+                            .font(.custom("Cochin-bold", size: 28))
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                     //       .background(.customBlue.opacity(0.3))
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack {
@@ -50,33 +52,33 @@ struct WorkoutsView: View {
                                             }
                                             .padding(.vertical)
                                             .frame(maxWidth: .infinity)
-                                            .background(.customBeige)
+                                            .background(.customBeige).opacity(0.8)
                                         }
+                                        .background(.white)
                                         .clipShape(.rect(cornerRadius: 10))
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 10)
                                                 .stroke(.customBlue)
                                         )
+                                        .padding(.horizontal, 6)
+                                        .padding(.bottom, 20)
                                     }
                                 }
                             }
                         }
                     }
-                    .padding()
+                    .padding([.vertical, .leading], 10)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        LinearGradient(gradient: Gradient(colors: [.customBlue, .customBlue.opacity(0.01)]), startPoint: .top, endPoint: .bottom)
+                    )
                 }
             }
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarLeading) {
-//                    Text("Select yuor exercises!")
-//                        .font(.largeTitle)
-//                        .fontDesign(.rounded)
-//                }
-//            }
-            .navigationTitle("Select yuor exercises!")
+            .navigationTitle("Select your exercises!")
             .navigationBarTitleTextColor(.customBlue)
+            .background(.customBlue)
         }
     }
-
 }
 
 #Preview {
