@@ -10,7 +10,6 @@ import SwiftUI
 struct WorkoutsView: View {
     let workoutsByPart: WorkoutModel = Bundle.main.decode("workouts.json")
     
-    
     let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
@@ -25,7 +24,6 @@ struct WorkoutsView: View {
                             .font(.custom("Cochin-bold", size: 28))
                             .padding()
                             .frame(maxWidth: .infinity, alignment: .leading)
-                     //       .background(.customBlue.opacity(0.3))
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack {
@@ -38,7 +36,15 @@ struct WorkoutsView: View {
                                                 .resizable()
                                                 .scaledToFit()
                                                 .frame(width: 200, height: 100)
-                                                .padding()
+                                                .padding(12)
+                                                .overlay(alignment: .topTrailing) {
+                                                    Button {
+//                                                        exercise.isFavourite.toggle()
+                                                    } label: {
+                                                        Image(systemName: "heart" )
+                                                            .padding(12)
+                                                    }
+                                                }
                                             
                                             VStack {
                                                 Text(exercise.workoutName)
@@ -48,9 +54,8 @@ struct WorkoutsView: View {
                                                 Text("\(exercise.workoutDifficulty) / 5")
                                                     .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                                                     .font(.custom("Cochin-bold", size: 24))
-                                                
                                             }
-                                            .padding(.vertical)
+                                            .padding(.vertical, 8)
                                             .frame(maxWidth: .infinity)
                                             .background(.customBeige).opacity(0.8)
                                         }
