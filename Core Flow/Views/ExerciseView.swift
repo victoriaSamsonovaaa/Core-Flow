@@ -45,6 +45,12 @@ struct ExerciseView: View {
                             .padding(.bottom, 5)
                         Text(exercise.workoutExplanation)
                         
+                        Rectangle()
+                            .frame(height: 2)
+                            .foregroundStyle(.customBlue)
+                            .padding(.vertical)
+
+                        
                     }
                     .padding(.horizontal)
                     .navigationBarTitleDisplayMode(.inline)
@@ -55,6 +61,11 @@ struct ExerciseView: View {
                             }
                         }
                     }
+                    
+                    Text("Exercise difficulty")
+                        .font(.title.bold())
+                        .padding(.bottom, 5)
+                    RatingView(rating: exercise.workoutDifficulty, frame: 20, space: 8)
                 }
             }
         }
