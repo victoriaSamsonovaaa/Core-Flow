@@ -10,19 +10,21 @@ import SwiftUI
 struct WorkoutsView: View {
     let workoutsByPart: WorkoutModel = Bundle.main.decode("workouts.json")
     
-    let columns = [
-        GridItem(.adaptive(minimum: 150))
-    ]
-    
     var body: some View {
         NavigationStack {
             ScrollView {
+                Text("Here you can find most appropriate workouts for your needs")
+                    .foregroundStyle(.customBlue)
+                    .font(.custom("Cochin-bold", size: 27))
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .center)
+                
                 ForEach(workoutsByPart.muscle) { muscle in
                     VStack(alignment: .leading) {
                         Text(muscle.name)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.customGreen)
                             .font(.custom("Cochin-bold", size: 28))
-                            .padding()
+                            .padding(.leading, 6)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
                         ScrollView(.horizontal, showsIndicators: false) {
@@ -39,7 +41,7 @@ struct WorkoutsView: View {
                                                 .padding(12)
                                                 .overlay(alignment: .topTrailing) {
                                                     Button {
-//                                                        exercise.isFavourite.toggle()
+                                                        // exercise.isFavourite.toggle()
                                                     } label: {
                                                         Image(systemName: "heart" )
                                                             .padding(12)
@@ -60,28 +62,28 @@ struct WorkoutsView: View {
                                             .background(.customBeige).opacity(0.8)
                                         }
                                         .background(.white)
-                                        .clipShape(.rect(cornerRadius: 10))
+                                        .clipShape(.rect(cornerRadius: 13))
                                         .overlay(
-                                            RoundedRectangle(cornerRadius: 10)
-                                                .stroke(.customBlue)
+                                            RoundedRectangle(cornerRadius: 13)
+                                                .stroke(.customBlue, lineWidth: 2)
                                         )
-                                        .padding(.horizontal, 6)
+                                        .padding([.horizontal, .top], 2)
                                         .padding(.bottom, 20)
                                     }
                                 }
                             }
                         }
                     }
-                    .padding([.vertical, .leading], 10)
+                    .padding([.bottom, .leading], 10)
                     .frame(maxWidth: .infinity)
-                    .background(
-                        LinearGradient(gradient: Gradient(colors: [.customBlue, .customBlue.opacity(0.01)]), startPoint: .top, endPoint: .bottom)
-                    )
+//                    .background(
+//                        LinearGradient(gradient: Gradient(colors: [.customGreen, .white], startPoint: .top, endPoint: .bottom))
+//                    )
                 }
             }
             .navigationTitle("Select your exercises!")
             .navigationBarTitleTextColor(.customBlue)
-            .background(.customBlue)
+            //   .background(.customBlue)
         }
     }
 }
