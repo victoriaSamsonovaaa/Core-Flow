@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import SwiftData
+
+class WorkoutsViewViewModel: ObservableObject {
+    
+    func addToFavourite(modelContext: inout ModelContext, exercise: ExerciseModel) {
+        
+    }
+}

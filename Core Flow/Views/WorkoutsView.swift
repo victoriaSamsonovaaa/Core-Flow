@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WorkoutsView: View {
     let workoutsByPart: WorkoutModel = Bundle.main.decode("workouts.json")
+    @Environment(\.modelContext) var modelContext
+    @StateObject var viewModel = WorkoutsViewViewModel()
     
     var body: some View {
         NavigationStack {
@@ -18,14 +20,32 @@ struct WorkoutsView: View {
                     .font(.custom("Cochin-bold", size: 27))
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .center)
+//                Rectangle()
+//                    .frame(height: 1)
+//                    .foregroundStyle(.customBlue.secondary)
+//                    .padding(6)
                 
                 ForEach(workoutsByPart.muscle) { muscle in
                     VStack(alignment: .leading) {
-                        Text(muscle.name)
-                            .foregroundStyle(.customGreen)
-                            .font(.custom("Cochin-bold", size: 28))
-                            .padding(.leading, 6)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        HStack {
+                            Text(muscle.name)
+                                .font(.custom("Cochin-bold", size: 28))
+                            
+                            Rectangle()
+                                .frame(height: 1)
+                                .foregroundStyle(.customBlue.secondary)
+                                .padding(.horizontal, 6)
+                            
+                            Button {
+                                
+                            } label: {
+                                Text("View all")
+                                    .font(.custom("Cochin-bold", size: 20))
+                            }
+                        }
+                        .foregroundStyle(.customGreen)
+                        .padding(.horizontal, 6)
+                        
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack {
@@ -39,9 +59,13 @@ struct WorkoutsView: View {
                                                 .scaledToFit()
                                                 .frame(width: 200, height: 100)
                                                 .padding(12)
+                                                .overlay(alignment: .topLeading) {
+                                                    RatingView(rating: exercise.workoutDifficulty, frame: 10, space: 2)
+                                                        .padding(12)
+                                                }
                                                 .overlay(alignment: .topTrailing) {
                                                     Button {
-                                                        // exercise.isFavourite.toggle()
+                                                        //viewModel.addToFavourite(modelContext: &modelContext, exercise: exercise)
                                                     } label: {
                                                         Image(systemName: "heart" )
                                                             .padding(12)
@@ -52,10 +76,7 @@ struct WorkoutsView: View {
                                                 Text(exercise.workoutName)
                                                     .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                                                     .font(.custom("Cochin-bold", size: 24))
-                                                
-                                                Text("\(exercise.workoutDifficulty) / 5")
-                                                    .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
-                                                    .font(.custom("Cochin-bold", size: 24))
+                                                    
                                             }
                                             .padding(.vertical, 8)
                                             .frame(maxWidth: .infinity)
@@ -76,9 +97,6 @@ struct WorkoutsView: View {
                     }
                     .padding([.bottom, .leading], 10)
                     .frame(maxWidth: .infinity)
-//                    .background(
-//                        LinearGradient(gradient: Gradient(colors: [.customGreen, .white], startPoint: .top, endPoint: .bottom))
-//                    )
                 }
             }
             .navigationTitle("Select your exercises!")
