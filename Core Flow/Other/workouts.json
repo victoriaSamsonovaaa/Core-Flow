@@ -310,7 +310,8 @@
                   "workoutDescription": "Dynamic glute and hamstring exercise",
                   "workoutImage": "step_ups_kickback.jpg",
                   "workoutDifficulty": 3,
-                  "workoutExplanation": "Step onto a raised surface, then extend the other leg back in a kick. Return to start and switch legs. This exercise strengthens glutes and hamstrings."
+                  "workoutExplanation": "Step onto a raised surface, then extend the other leg back in a kick. Return to start and switch legs. This exercise strengthens glutes and hamstrings.",
+                  "isFavourite":false
                 },
                 {
                   "workoutName": "Clamshells",
@@ -461,3 +462,4 @@
         }
     ]
 }
+
