@@ -8,6 +8,7 @@
 import SwiftUI
 import Firebase
 import FirebaseAuth
+import SwiftData
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
@@ -25,5 +26,6 @@ struct Core_FlowApp: App {
         WindowGroup {
             FirstBaseView()
         }
+        .modelContainer(for: ExerciseModel.self)
     }
 }
