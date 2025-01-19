@@ -14,6 +14,8 @@ struct ProfileView: View {
         count: 100
     )
     
+    @State private var isAuth: Bool = false
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -21,7 +23,6 @@ struct ProfileView: View {
                     Text(item)
                         .listRowInsets(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
                         .listRowBackground(Color.clear)
-                       // .toolbarBackground(Color(#colorLiteral(red: 0.3328896165, green: 0.4141520262, blue: 0.3390924037, alpha: 1)))
                 }
                 .listStyle(.plain) //Change ListStyle
                 .scrollContentBackground(.hidden)
@@ -30,14 +31,16 @@ struct ProfileView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
-                        Button("Settings", systemImage: "gear") {
-                            
+                        NavigationLink {
+                            SettingsView(isAuthenticated: $isAuth)
+                        } label: {
+                            Image(systemName: "gear")
                         }
                     }
                 }
-                .tint(Color.customBlue)
             }
         }
+        .tint(Color.customBlue)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
     }
