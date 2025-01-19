@@ -14,7 +14,6 @@ struct MainTabScreenView: View {
     }
 
     @State private var selectedTab: Tab = .home
-    @Binding var isAuthenticated: Bool
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -42,5 +41,5 @@ struct MainTabScreenView: View {
 
 
 #Preview {
-    MainTabScreenView(isAuthenticated: .constant(true))
+    MainTabScreenView()
 }

@@ -25,6 +25,7 @@ class SignInViewViewModel: ObservableObject {
         }
         
         try await AuthenticationManager.shared.signInUser(email: email, password: password)
+    
     }
     
     func signUpWithGoogle() async throws {

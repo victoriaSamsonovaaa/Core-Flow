@@ -18,6 +18,7 @@ struct SignUpView: View {
     @State private var emailOutput: String = ""
     @State private var passwordOutput: String = ""
     @State private var secondPasswordOutput: String = ""
+    @State private var isSuccessfully: Bool = false
 
     var body: some View {
         VStack(alignment: .center) {
@@ -72,7 +73,8 @@ struct SignUpView: View {
                 Task {
                     do {
                         try await viewModel.signUp()
-                        isAuthenticated = true
+                    //    isAuthenticated = true
+                        isSuccessfully = true
                     } catch {
                         print("Error: \(error)")
                     }
@@ -135,6 +137,17 @@ struct SignUpView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(#colorLiteral(red: 0.9121661782, green: 0.8284091949, blue: 0.773633182, alpha: 0.7578390731)))
+        .alert(isPresented: $isSuccessfully) {
+                 Alert(
+                     title: Text("Great!"),
+                     message: Text("Your account has been successfully created."),
+                     dismissButton: .default(Text("OK")) {
+                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                             isAuthenticated = true
+                         }
+                     }
+                 )
+             }
     }
 }
 
