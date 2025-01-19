@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @StateObject private var viewModel = SettingsViewViewModel()
-    @Binding var isAuthenticated: Bool
+    /*@Binding var*/ @State private var isAuthenticated: Bool = false
     
     var body: some View {
         VStack {
@@ -49,5 +49,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView(isAuthenticated: .constant(false))
+    SettingsView(/*isAuthenticated: .constant(false)*/)
 }
