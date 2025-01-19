@@ -73,7 +73,7 @@ struct SignUpView: View {
                 Task {
                     do {
                         try await viewModel.signUp()
-                    //    isAuthenticated = true
+                 //       isAuthenticated = true
                         isSuccessfully = true
                     } catch {
                         print("Error: \(error)")

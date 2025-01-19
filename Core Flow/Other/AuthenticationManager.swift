@@ -43,7 +43,9 @@ class AuthenticationManager {
     }
     
     func signOut() throws {
+        //print("called")
         try Auth.auth().signOut()
+       // print("completed")
     }
 }
 
