@@ -8,9 +8,9 @@
 import Foundation
 import SwiftData
 
-class WorkoutsViewViewModel: ObservableObject {
+class WorkoutsViewModel: ObservableObject {
     
-    func addToFavourite(modelContext: inout ModelContext, exercise: ExerciseModel) {
+    func addToFavourite() {
         
     }
 }

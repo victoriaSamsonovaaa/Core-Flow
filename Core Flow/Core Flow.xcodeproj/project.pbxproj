@@ -11,6 +11,7 @@
 		AF4F491F2D22B19600CA0E34 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AF4F491E2D22B19600CA0E34 /* FirebaseAuth */; };
 		AF4F49212D22B19600CA0E34 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AF4F49202D22B19600CA0E34 /* FirebaseAuthCombine-Community */; };
 		AF5041972D3801EB009109DB /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5041962D3801EB009109DB /* ViewExtensions.swift */; };
+		AFBDCA972D46B4CC00C56313 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AFBDCA962D46B4CC00C56313 /* FirebaseFirestore */; };
 		AFDE43192D32CD65009D0DF6 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = AFDE43182D32CD65009D0DF6 /* GoogleSignIn */; };
 		AFDE431B2D32CD65009D0DF6 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AFDE431A2D32CD65009D0DF6 /* GoogleSignInSwift */; };
 		AFDE431F2D32CE03009D0DF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFDE431E2D32CE03009D0DF6 /* GoogleService-Info.plist */; };
@@ -64,12 +65,20 @@
 				AFDE43192D32CD65009D0DF6 /* GoogleSignIn in Frameworks */,
 				AF4F49212D22B19600CA0E34 /* FirebaseAuthCombine-Community in Frameworks */,
 				AF4F491F2D22B19600CA0E34 /* FirebaseAuth in Frameworks */,
+				AFBDCA972D46B4CC00C56313 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AFBDCA952D46B4CC00C56313 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AFDE43262D32D31F009D0DF6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +100,7 @@
 				AFF470B52D2170FD00ACA175 /* Core Flow */,
 				AFF470B42D2170FD00ACA175 /* Products */,
 				AFDE431E2D32CE03009D0DF6 /* GoogleService-Info.plist */,
+				AFBDCA952D46B4CC00C56313 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +141,7 @@
 				AF4F49202D22B19600CA0E34 /* FirebaseAuthCombine-Community */,
 				AFDE43182D32CD65009D0DF6 /* GoogleSignIn */,
 				AFDE431A2D32CD65009D0DF6 /* GoogleSignInSwift */,
+				AFBDCA962D46B4CC00C56313 /* FirebaseFirestore */,
 			);
 			productName = "Core Flow";
 			productReference = AFF470B32D2170FD00ACA175 /* Core Flow.app */;
@@ -437,6 +448,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AF4F491B2D22B19500CA0E34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseAuthCombine-Community";
+		};
+		AFBDCA962D46B4CC00C56313 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF4F491B2D22B19500CA0E34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 		AFDE43182D32CD65009D0DF6 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -10,7 +10,7 @@ import HealthKit
 
 class HealthManager: ObservableObject {
     
-    init() {
-        let steps = HKQuantityType(.stepCount)
-    }
+//    init() {
+//        let steps = HKQuantityType(.stepCount)
+//    }
 }
