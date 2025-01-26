@@ -10,7 +10,7 @@ import AuthenticationServices
 import CryptoKit
 
 @MainActor
-class SignInViewViewModel: ObservableObject {
+class SignInViewModel: ObservableObject {
     
     @Published var name: String = ""
     @Published var email: String = ""

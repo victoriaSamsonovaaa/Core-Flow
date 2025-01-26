@@ -8,27 +8,22 @@
 import SwiftUI
 
 struct ProfileView: View {
-    
-    @State private var items: [String] = .init(
-        repeating: "List item",
-        count: 100
-    )
-    
+
     @State private var isAuth: Bool = false
+    @StateObject private var viewModel = ProfileViewModel()
     
     var body: some View {
         NavigationStack {
             VStack {
-                List(items, id: \.self) { item in
-                    Text(item)
-                        .listRowInsets(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
-                        .listRowBackground(Color.clear)
+                List {
+                    if let user = viewModel.user {
+                        Text("userID: \(user.uid)")
+                    }
                 }
-                .listStyle(.plain) //Change ListStyle
-                .scrollContentBackground(.hidden)
-              //  .background(Color.customGreen)
                 .navigationTitle("Hello, Victoria!")
-                .navigationBarTitleDisplayMode(.inline)
+                .onAppear {
+                    try? viewModel.loadCurrentUser()
+                }
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
                         NavigationLink {
@@ -38,11 +33,13 @@ struct ProfileView: View {
                         }
                     }
                 }
+                .scrollContentBackground(.hidden)
+                .listStyle(.plain)
+                
             }
+            .tint(Color.customBlue)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .tint(Color.customBlue)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .edgesIgnoringSafeArea(.all)
     }
 }
 

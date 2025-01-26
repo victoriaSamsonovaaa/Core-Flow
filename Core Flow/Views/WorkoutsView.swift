@@ -9,8 +9,7 @@ import SwiftUI
 
 struct WorkoutsView: View {
     let workoutsByPart: WorkoutModel = Bundle.main.decode("workouts.json")
-    @Environment(\.modelContext) var modelContext
-    @StateObject var viewModel = WorkoutsViewViewModel()
+    @StateObject var viewModel = WorkoutsViewModel()
     
     var body: some View {
         NavigationStack {
@@ -65,7 +64,7 @@ struct WorkoutsView: View {
                                                 }
                                                 .overlay(alignment: .topTrailing) {
                                                     Button {
-                                                        //viewModel.addToFavourite(modelContext: &modelContext, exercise: exercise)
+                                                        
                                                     } label: {
                                                         Image(systemName: "heart" )
                                                             .padding(12)

@@ -12,7 +12,7 @@ import AuthenticationServices
 import UIKit
 
 struct SignUpView: View {
-    @StateObject private var viewModel = SignUpViewViewModel()
+    @StateObject private var viewModel = SignUpViewModel()
     
     @Binding var isAuthenticated: Bool
     @State private var emailOutput: String = ""

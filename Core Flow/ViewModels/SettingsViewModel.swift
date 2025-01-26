@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SettingsViewViewModel: ObservableObject {
+class SettingsViewModel: ObservableObject {
     
     func signOut() throws {
         try AuthenticationManager.shared.signOut()

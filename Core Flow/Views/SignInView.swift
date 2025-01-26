@@ -12,7 +12,7 @@ import AuthenticationServices
 import UIKit
 
 struct SignInView: View {
-    @State private var viewModel = SignInViewViewModel()
+    @State private var viewModel = SignInViewModel()
     @Binding var isAuthenticated: Bool
     
     var body: some View {

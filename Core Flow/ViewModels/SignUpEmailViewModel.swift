@@ -10,7 +10,7 @@ import AuthenticationServices
 import CryptoKit
 
 @MainActor
-class SignUpViewViewModel: ObservableObject {
+class SignUpViewModel: ObservableObject {
     
     let signInAppleHelper = SignInAppleHelper()
     
