@@ -15,15 +15,14 @@ struct ExerciseView: View {
         NavigationView {
             ScrollView {
                 VStack {
+                    Text(exercise.workoutName)
+                        .font(.largeTitle)
+                        .foregroundStyle(.customBlue)
+                    
                     Image(exercise.workoutImage)
                         .resizable()
                         .scaledToFit()
                         .padding(.top)
-                        .padding(.bottom, 30)
-                    
-                    Text(exercise.workoutName)
-                        .font(.title3.bold().italic())
-                        .foregroundStyle(.customBlue)
                     
                     VStack(alignment: .leading) {
                         Rectangle()
@@ -55,9 +54,28 @@ struct ExerciseView: View {
                     .padding(.horizontal)
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
-                        ToolbarItem(placement: .topBarTrailing) {
-                            Button("Like", systemImage: "heart") {
+                        ToolbarItem {
+                            Menu {
+                                ShareLink(item: Image(exercise.workoutImage), preview: SharePreview("Exercise", image: Image(exercise.workoutImage))) {
+                                    Label("Share", systemImage: "square.and.arrow.up")
+                                }
                                 
+                                Divider()
+                                
+                                Button {
+                                    
+                                } label: {
+                                    Label("Add to Favorites", systemImage: "heart")
+                                }
+                                
+                                Button(role: .destructive) {
+                                    
+                                } label: {
+                                    Label("Hide this exercise", systemImage: "eye.slash")
+                                }
+                                
+                            } label: {
+                                Label("Menu", systemImage: "ellipsis.circle")
                             }
                         }
                     }
