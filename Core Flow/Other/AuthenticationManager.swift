@@ -14,7 +14,7 @@ enum AuthProviderOption: String {
     case apple = "apple.com"
 }
 
-class AuthenticationManager {
+final class AuthenticationManager {
     
     static let shared = AuthenticationManager()
     private init() { }

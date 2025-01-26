@@ -23,8 +23,9 @@ class SignUpViewModel: ObservableObject {
 
     func signUp() async throws {
         if isAgree {
-            let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
-            print(returnedUserData)
+            let authDataResult = try await AuthenticationManager.shared.createUser(email: email, password: password)
+            print(authDataResult)
+            try await UserManager.shared.createNewUser(auth: authDataResult)
         }
         else {
             customMessage = "You should accept our terms"
@@ -68,29 +69,15 @@ class SignUpViewModel: ObservableObject {
     func signUpWithGoogle() async throws {
         let helper = SignInGoogleHelper()
         let tokens = try await helper.signInGoogle()
-        try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
+        let authDataResult = try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
+        try await UserManager.shared.createNewUser(auth: authDataResult)
     }
     
     func signUpWithApple() async throws {
         let helper = SignInAppleHelper()
         let tokens = try await helper.startSignInWithAppleFlow()
-        try await AuthenticationManager.shared.signInWithApple(tokens: tokens)
-        
-//        signInAppleHelper.startSignInWithAppleFlow { result in
-//            switch result {
-//                case .success(let signInAppleResults):
-//                Task {
-//                    do {
-//                        try await AuthenticationManager.shared.signInWithApple(tokens: signInAppleResults)
-//                        self.didSignedInWithApple = true
-//                    } catch {
-//                        
-//                    }
-//                }
-//            case .failure(let error):
-//                print("Error signing in with Apple: \(error)")
-//            }
-//        }
+        let authDataResult = try await AuthenticationManager.shared.signInWithApple(tokens: tokens)
+        try await UserManager.shared.createNewUser(auth: authDataResult)
     }
     
 }

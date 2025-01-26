@@ -17,12 +17,12 @@ struct ProfileView: View {
             VStack {
                 List {
                     if let user = viewModel.user {
-                        Text("userID: \(user.uid)")
+                        Text("userID: \(user.userId)")
                     }
                 }
                 .navigationTitle("Hello, Victoria!")
-                .onAppear {
-                    try? viewModel.loadCurrentUser()
+                .task {
+                    try? await viewModel.loadCurrentUser()
                 }
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
