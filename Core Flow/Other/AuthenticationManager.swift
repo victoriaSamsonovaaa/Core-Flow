@@ -27,6 +27,16 @@ final class AuthenticationManager {
         return AuthDataResultModel(user: user)
     }
     
+//    func getAuthenticatedUser() async throws -> AuthDataResultModel {
+//        guard let uid = Auth.auth().currentUser?.uid else {
+//            throw URLError(.badServerResponse)
+//        }
+//        guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else {
+//            throw URLError(.badServerResponse)
+//        }
+//        return try snapshot.data(as: AuthDataResultModel.self)
+//    }
+    
     func getProvider() throws -> [AuthProviderOption] {
         guard let providerData = Auth.auth().currentUser?.providerData else {
             throw URLError(.badServerResponse)

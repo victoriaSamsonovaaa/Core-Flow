@@ -9,8 +9,5 @@ import Foundation
 import HealthKit
 
 class HealthManager: ObservableObject {
-    
-//    init() {
-//        let steps = HKQuantityType(.stepCount)
-//    }
+
 }

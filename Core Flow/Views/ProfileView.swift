@@ -13,33 +13,34 @@ struct ProfileView: View {
     @StateObject private var viewModel = ProfileViewModel()
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                List {
-                    if let user = viewModel.user {
-                        Text("userID: \(user.userId)")
+        if let user = viewModel.user {
+            NavigationStack {
+                VStack {
+                    List {
+                        Text("userID: \(user.userid)")
                     }
-                }
-                .navigationTitle("Hello, Victoria!")
-                .task {
-                    try? await viewModel.loadCurrentUser()
-                }
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        NavigationLink {
-                            SettingsView(isAuthenticated: $isAuth)
-                        } label: {
-                            Image(systemName: "gear")
+                    .navigationTitle("Hello, \(user.fullname)!")
+                    .task {
+                        try? await viewModel.loadCurrentUser()
+                    }
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            NavigationLink {
+                                SettingsView(isAuthenticated: $isAuth)
+                            } label: {
+                                Image(systemName: "gear")
+                            }
                         }
                     }
+                    .scrollContentBackground(.hidden)
+                    .listStyle(.plain)
+                    
                 }
-                .scrollContentBackground(.hidden)
-                .listStyle(.plain)
-                
+                .tint(Color.customBlue)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .tint(Color.customBlue)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+
     }
 }
 

@@ -9,19 +9,30 @@ import Foundation
 import FirebaseFirestore
 
 struct DBUser: Codable {
- //   let name: String
-    let userId: String
+    let fullname: String
+    let userid: String
     let email: String?
-    let photourl: String?
     let dataCreated: Date?
     
-    init(auth: AuthDataResultModel) {
-        self.userId = auth.uid
+    init(auth: AuthDataResultModel, fullName: String) {
+        self.fullname = fullName
+        self.userid = auth.uid
         self.email = auth.email
-        self.photourl = auth.photoURL
         self.dataCreated = Date()
     }
+    
+    var initials: String {
+        let formatter = PersonNameComponentsFormatter()
+        if let components = formatter.personNameComponents(from: fullname) {
+            formatter.style = .abbreviated
+            return formatter.string(from: components)
+        }
+        
+        return ""
+    }
 }
+
+
 
 final class UserManager {
     
@@ -47,44 +58,14 @@ final class UserManager {
     }()
     
     func createNewUser(user: DBUser) async throws {
-        try userDocument(userId: user.userId).setData(from: user, merge: false, encoder: encoder)
+        try userDocument(userId: user.userid).setData(from: user, merge: false, encoder: encoder)
     }
     
     func getUser(userId: String) async throws -> DBUser {
-        try await Firestore.firestore().collection("user").document(userId).getDocument(as: DBUser.self, decoder: decoder)
+        try await Firestore.firestore().collection("users").document(userId).getDocument(as: DBUser.self, decoder: decoder)
     }
     
     func updateStatus(user: DBUser) async throws {
-        try userDocument(userId: user.userId).setData(from: user, merge: true, encoder: encoder)
+        try userDocument(userId: user.userid).setData(from: user, merge: true, encoder: encoder)
     }
-    
-//    func createNewUser(auth: AuthDataResultModel) async throws {
-//        var userData: [String: Any] = [
-//            "user_id" : auth.uid,
-//            "date_created" : Timestamp(),
-//        ]
-//        if let email = auth.email {
-//            userData["email"] = email
-//        }
-//        if let photourl = auth.photoURL {
-//            userData["photo_url"] = photourl
-//        }
-//        
-//        try await userDocument(userId: auth.uid).setData(userData, merge: false)
-//    }
-    
-    
-//    func getUser(userId: String) async throws -> DBUser {
-//        let snapsh = try await Firestore.firestore().collection("user").document(userId).getDocument()
-//        
-//        guard let data = snapsh.data(), let userId = data["user_id"] as? String else {
-//            throw URLError(.badServerResponse)
-//        }
-//        
-//        let email = data["email"] as? String
-//        let photourl = data["photo_url"] as? String
-//        let dataCreated = data["date_created"] as? Date
-//        
-//        return DBUser(userId: userId, email: email, photourl: photourl, dataCreated: dataCreated)
-//    }
 }
