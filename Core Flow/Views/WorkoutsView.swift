@@ -19,10 +19,6 @@ struct WorkoutsView: View {
                     .font(.custom("Cochin-bold", size: 27))
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .center)
-//                Rectangle()
-//                    .frame(height: 1)
-//                    .foregroundStyle(.customBlue.secondary)
-//                    .padding(6)
                 
                 ForEach(workoutsByPart.muscle) { muscle in
                     VStack(alignment: .leading) {
@@ -64,7 +60,7 @@ struct WorkoutsView: View {
                                                 }
                                                 .overlay(alignment: .topTrailing) {
                                                     Button {
-                                                        
+                                                        viewModel.addToFavourites()
                                                     } label: {
                                                         Image(systemName: "heart" )
                                                             .padding(12)

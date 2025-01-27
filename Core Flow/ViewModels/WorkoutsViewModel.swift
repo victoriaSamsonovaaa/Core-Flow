@@ -10,7 +10,7 @@ import SwiftData
 
 class WorkoutsViewModel: ObservableObject {
     
-    func addToFavourite() {
+    func addToFavourites() {
         
     }
 }

@@ -36,7 +36,7 @@ struct SignUpView: View {
                     .font(.custom("Cochin-Bold", size: 24))
                     .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                     .padding(.bottom, 2)
-                CustomTextField(placeholder: "Enter your Name", text: $viewModel.name)
+                CustomTextField(placeholder: "Enter your Name", text: $viewModel.fullName)
                     .padding(.bottom, 22)
 
                 Text("Email")
