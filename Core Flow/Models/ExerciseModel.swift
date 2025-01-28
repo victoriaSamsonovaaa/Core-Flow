@@ -42,7 +42,6 @@ class ExerciseModel: Codable, Identifiable {
         self.isFavourite = isFavourite
     }
 
-    // Декодирование из JSON
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.workoutName = try container.decode(String.self, forKey: .workoutName)
