@@ -26,6 +26,6 @@ struct Core_FlowApp: App {
         WindowGroup {
             FirstBaseView()
         }
-        .modelContainer(for: ExerciseModel.self)
+      //  .modelContainer(for: ExerciseModel.self)
     }
 }
