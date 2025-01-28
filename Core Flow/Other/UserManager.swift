@@ -36,9 +36,16 @@ final class UserManager {
     }
     
     func getUser(userId: String) async throws -> DBUser {
-        try await Firestore.firestore().collection("users").document(userId).getDocument(as: DBUser.self, decoder: decoder)
+        do {
+            return try await Firestore.firestore().collection("users").document(userId).getDocument(as: DBUser.self, decoder: decoder)
+        } catch {
+            print("Ошибка при получении пользователя из Firestore: \(error.localizedDescription)")
+            throw error
+        }
     }
-//    
+    
+    
+//
 //    func updateStatus(user: DBUser) async throws {
 //        try userDocument(userId: user.userid).setData(from: user, merge: true, encoder: encoder)
 //    }
@@ -50,6 +57,7 @@ final class UserManager {
                 $0.id == exercise.id
             }) {
                 updatedUser.favWorkouts.append(exercise)
+                print("un momento")
                 try userDocument(userId: user.userid).setData(from: updatedUser, merge: true, encoder: encoder)
             } else {
                 print("Упражнение уже в избранном")
