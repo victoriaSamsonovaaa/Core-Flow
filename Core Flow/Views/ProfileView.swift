@@ -8,37 +8,100 @@
 import SwiftUI
 
 struct ProfileView: View {
-
     @State private var isAuth: Bool = false
     @StateObject private var viewModel = ProfileViewModel()
     
     var body: some View {
         if let user = viewModel.user {
             NavigationStack {
-                VStack {
-                    List {
-                        Text("userID: \(user.userid)")
-                    }
-                    .navigationTitle("Hello, \(user.fullname)!")
-                    .task {
-                        try? await viewModel.loadCurrentUser()
-                    }
-                    .toolbar {
-                        ToolbarItem(placement: .topBarTrailing) {
-                            NavigationLink {
-                                SettingsView(isAuthenticated: $isAuth)
-                            } label: {
-                                Image(systemName: "gear")
+                List {
+                    Section {
+                        HStack {
+                            Text("\(user.initials)")
+                                .font(.title)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(.customBlue)
+                                .frame(width: 70, height: 70)
+                                .background(.gray.opacity(0.5))
+                                .clipShape(.circle)
+                            
+                            VStack(alignment: .leading) {
+                                Text("\(user.fullname)")
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(.customBlue)
+                                
+                                Text("\(user.email!)")
+                                    .font(.footnote)
+                                    .accentColor(.customBlue).opacity(0.7)
                             }
+                            .accentColor(.customBlue)
+                            .padding(.leading, 10)
                         }
                     }
-                    .scrollContentBackground(.hidden)
-                    .listStyle(.plain)
                     
+                    Section {
+                        NavigationLink {
+                            SettingsView(isAuthenticated: $isAuth)
+                        } label: {
+                            ProfileRowView(imageName: "gear", title: "Settings", tint: .pink)
+                        }
+                        
+                        NavigationLink {
+                            
+                        } label: {
+                            ProfileRowView(imageName: "heart.rectangle.fill", title: "My favourites", tint: .pink)
+                        }
+                        
+                        NavigationLink {
+                            
+                        } label: {
+                            ProfileRowView(imageName: "info.circle", title: "Info", tint: .pink)
+                        }
+                    
+                    }
+                    
+                    Section("Other") {
+                        NavigationLink {
+                            
+                        } label: {
+                            ProfileRowView(imageName: "rectangle.portrait.and.arrow.right", title: "Log out", tint: .pink)
+                        }
+                        
+                    }
+
                 }
-                .tint(Color.customBlue)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .listStyle(GroupedListStyle())
+                .navigationTitle("Personal account")
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        NavigationLink {
+                            SettingsView(isAuthenticated: $isAuth)
+                        } label: {
+                            Image(systemName: "pencil")
+                        }
+                    }
+                }
             }
+
+
+            
+//            NavigationStack {
+//                VStack {
+//                    List {
+//                        Text("userID: \(user.userid)")
+//                    }
+//                    .navigationTitle("Hello, \(user.fullname)!")
+//                    .task {
+//                        try? await viewModel.loadCurrentUser()
+//                    }
+//                    .scrollContentBackground(.hidden)
+//                    .listStyle(.plain)
+//                    
+//                }
+//                .tint(Color.customBlue)
+//                .frame(maxWidth: .infinity, maxHeight: .infinity)
+//            }
         }
 
     }
