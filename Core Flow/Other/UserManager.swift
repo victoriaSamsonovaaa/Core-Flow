@@ -44,26 +44,18 @@ final class UserManager {
         }
     }
     
-    
-//
-//    func updateStatus(user: DBUser) async throws {
-//        try userDocument(userId: user.userid).setData(from: user, merge: true, encoder: encoder)
-//    }
-    
-    func addToFavourite(exercise: ExerciseModel, user: DBUser) async throws {
+    func addToFavourite(exercise: ExerciseModel) async throws {
         do {
-            var updatedUser = try await getUser(userId: user.userid)
-            if !updatedUser.favWorkouts.contains(where: {
-                $0.id == exercise.id
-            }) {
-                updatedUser.favWorkouts.append(exercise)
-                print("un momento")
-                try userDocument(userId: user.userid).setData(from: updatedUser, merge: true, encoder: encoder)
-            } else {
-                print("Упражнение уже в избранном")
-            }
+            let currAuthUser = try AuthenticationManager.shared.getAuthenticatedUser()
+            var dbUser = try await getUser(userId: currAuthUser.uid)
+            if !dbUser.favWorkouts.contains(where: { $0.id == exercise.id }) {
+                dbUser.favWorkouts.append(exercise)
+                try userDocument(userId: dbUser.userid).setData(from: dbUser, merge: true, encoder: encoder)
+              } else {
+                  print("already there")
+              }
         } catch {
-            print("Ошибка при добавлении в избранное: \(error.localizedDescription)")
+            print("error: \(error.localizedDescription)")
             throw error
         }
     }

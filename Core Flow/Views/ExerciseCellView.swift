@@ -10,6 +10,7 @@ import SwiftUI
 struct ExerciseCellView: View {
     @StateObject var viewModel = WorkoutsViewModel()
     let exercise: ExerciseModel
+  //  var isFav: Bool = false
     
     var body: some View {
         VStack {
@@ -24,11 +25,12 @@ struct ExerciseCellView: View {
                 }
                 .overlay(alignment: .topTrailing) {
                     Button {
+                     //   isFav.toggle()
                         Task {
                             try await viewModel.addToFavourites(exercise: exercise)
                         }
                     } label: {
-                        Image(systemName: "heart" )
+                        Image(systemName: /*isFav ? "heart.fill" :*/ "heart" )
                             .padding(12)
                     }
                 }
