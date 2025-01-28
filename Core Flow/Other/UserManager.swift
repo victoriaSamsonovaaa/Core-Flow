@@ -8,34 +8,8 @@
 import Foundation
 import FirebaseFirestore
 
-struct DBUser: Codable {
-    let fullname: String
-    let userid: String
-    let email: String?
-    let dataCreated: Date?
-    
-    init(auth: AuthDataResultModel, fullName: String) {
-        self.fullname = fullName
-        self.userid = auth.uid
-        self.email = auth.email
-        self.dataCreated = Date()
-    }
-    
-    var initials: String {
-        let formatter = PersonNameComponentsFormatter()
-        if let components = formatter.personNameComponents(from: fullname) {
-            formatter.style = .abbreviated
-            return formatter.string(from: components)
-        }
-        
-        return ""
-    }
-}
-
-
 
 final class UserManager {
-    
     static let shared = UserManager()
     private init() {}
     
@@ -64,8 +38,25 @@ final class UserManager {
     func getUser(userId: String) async throws -> DBUser {
         try await Firestore.firestore().collection("users").document(userId).getDocument(as: DBUser.self, decoder: decoder)
     }
+//    
+//    func updateStatus(user: DBUser) async throws {
+//        try userDocument(userId: user.userid).setData(from: user, merge: true, encoder: encoder)
+//    }
     
-    func updateStatus(user: DBUser) async throws {
-        try userDocument(userId: user.userid).setData(from: user, merge: true, encoder: encoder)
+    func addToFavourite(exercise: ExerciseModel, user: DBUser) async throws {
+        do {
+            var updatedUser = try await getUser(userId: user.userid)
+            if !updatedUser.favWorkouts.contains(where: {
+                $0.id == exercise.id
+            }) {
+                updatedUser.favWorkouts.append(exercise)
+                try userDocument(userId: user.userid).setData(from: updatedUser, merge: true, encoder: encoder)
+            } else {
+                print("Упражнение уже в избранном")
+            }
+        } catch {
+            print("Ошибка при добавлении в избранное: \(error.localizedDescription)")
+            throw error
+        }
     }
 }

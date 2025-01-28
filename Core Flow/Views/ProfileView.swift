@@ -44,19 +44,19 @@ struct ProfileView: View {
                         NavigationLink {
                             SettingsView(isAuthenticated: $isAuth)
                         } label: {
-                            ProfileRowView(imageName: "gear", title: "Settings", tint: .pink)
+                            ProfileRowView(imageName: "gear", title: "Settings", tint: .customGreen)
                         }
                         
                         NavigationLink {
                             
                         } label: {
-                            ProfileRowView(imageName: "heart.rectangle.fill", title: "My favourites", tint: .pink)
+                            ProfileRowView(imageName: "heart.rectangle.fill", title: "My favourites", tint: .customGreen)
                         }
                         
                         NavigationLink {
                             
                         } label: {
-                            ProfileRowView(imageName: "info.circle", title: "Info", tint: .pink)
+                            ProfileRowView(imageName: "info.circle", title: "Info", tint: .customGreen)
                         }
                     
                     }
@@ -65,7 +65,7 @@ struct ProfileView: View {
                         NavigationLink {
                             
                         } label: {
-                            ProfileRowView(imageName: "rectangle.portrait.and.arrow.right", title: "Log out", tint: .pink)
+                            ProfileRowView(imageName: "rectangle.portrait.and.arrow.right", title: "Log out", tint: .red)
                         }
                         
                     }
@@ -83,7 +83,7 @@ struct ProfileView: View {
                     }
                 }
             }
-
+            .tint(.customGreen)
 
             
 //            NavigationStack {
