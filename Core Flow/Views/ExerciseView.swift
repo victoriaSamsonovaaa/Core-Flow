@@ -10,12 +10,13 @@ import SwiftUI
 struct ExerciseView: View {
     let exercise: ExerciseModel
     let workoutsByPart: WorkoutModel = Bundle.main.decode("workouts.json")
+    let muscleName: String
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack {
-                    Text(exercise.workoutName)
+                    Text("\(muscleName) muscles group")
                         .font(.largeTitle)
                         .foregroundStyle(.customBlue)
                     
@@ -23,6 +24,10 @@ struct ExerciseView: View {
                         .resizable()
                         .scaledToFit()
                         .padding(.top)
+                    
+                    Text(exercise.workoutName)
+                        .font(.title3)
+                        .foregroundStyle(.customBlue)
                     
                     VStack(alignment: .leading) {
                         Rectangle()
@@ -48,8 +53,6 @@ struct ExerciseView: View {
                             .frame(height: 2)
                             .foregroundStyle(.customBlue)
                             .padding(.vertical)
-
-                        
                     }
                     .padding(.horizontal)
                     .navigationBarTitleDisplayMode(.inline)
@@ -79,18 +82,18 @@ struct ExerciseView: View {
                             }
                         }
                     }
-                    
                     Text("Exercise difficulty")
                         .font(.title.bold())
                         .padding(.bottom, 5)
                     RatingView(rating: exercise.workoutDifficulty, frame: 20, space: 8)
                 }
             }
+            .tint(.customGreen)
         }
     }
 }
 
 #Preview {
     let workoutsByPart: WorkoutModel = Bundle.main.decode("workouts.json")
-    return ExerciseView(exercise: workoutsByPart.muscle[0].exercises[4])
+    return ExerciseView(exercise: workoutsByPart.muscle[0].exercises[4], muscleName: "Back")
 }
