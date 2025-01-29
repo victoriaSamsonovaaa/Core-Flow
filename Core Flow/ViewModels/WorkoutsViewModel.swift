@@ -12,18 +12,9 @@ class WorkoutsViewModel: ObservableObject {
     
     @Published var workoutsByPart: WorkoutModel?
     @Published var user: DBUser? = nil
-    
 
     init() {
         loadFromJson()
-//        Task {
-//            do {
-//                try await loadCurrentUser()
-//            } catch {
-//                print("didn't got user: \(error)")
-//            }
-//        }
-        
     }
     
     func loadCurrentUser() async throws {
@@ -39,9 +30,13 @@ class WorkoutsViewModel: ObservableObject {
         }
     }
     
-    func addToFavourites(exercise: ExerciseModel) async throws {
-        try await UserManager.shared.addToFavourite(exercise: exercise, dbUser: &user!)
-        print("exercise added to fav")
+    func pressHeart(exercise: ExerciseModel) async throws {
+        try await UserManager.shared.pressHeart(exercise: exercise, dbUser: &user!)
     }
+    
+//    func addToFavourites(exercise: ExerciseModel) async throws {
+//        try await UserManager.shared.addToFavourite(exercise: exercise, dbUser: &user!)
+//        print("exercise added to fav")
+//    }
 }
 

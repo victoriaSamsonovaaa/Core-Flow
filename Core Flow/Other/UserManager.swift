@@ -44,33 +44,58 @@ final class UserManager {
         }
     }
     
-    func addToFavourite(exercise: ExerciseModel, dbUser: inout DBUser) async throws {
-        do {
-           // let currAuthUser = try AuthenticationManager.shared.getAuthenticatedUser()
-           // var dbUser = try await getUser(userId: currAuthUser.uid)
-            if !dbUser.favWorkouts.contains(where: { $0.id == exercise.id }) {
-                dbUser.favWorkouts.append(exercise)
-                try userDocument(userId: dbUser.userid).setData(from: dbUser, merge: true, encoder: encoder)
-              } else {
-                  print("already there")
-              }
-        } catch {
-            print("didn't add to fav: \(error.localizedDescription)")
-            throw error
+    func isInDB(exercise: ExerciseModel, dbUser: DBUser) -> (Bool, Int?) {
+        let index = dbUser.favWorkouts.firstIndex {
+            $0.id == exercise.id
         }
+        return(index != nil, index)
     }
     
-    func removeFromFavourite(exercise: ExerciseModel, dbUser: inout DBUser) async throws {
-        do {
-            if let index = dbUser.favWorkouts.firstIndex(where: { $0.id == exercise.id }) {
+    func pressHeart(exercise: ExerciseModel, dbUser: inout DBUser) async throws {
+        let (isInFavourite, index) = isInDB(exercise: exercise, dbUser: dbUser)
+        if isInFavourite {
+            if let index = index {
                 dbUser.favWorkouts.remove(at: index)
-                try userDocument(userId: dbUser.userid).setData(from: dbUser, merge: true, encoder: encoder)
-            } else {
-                print("did't found in fav")
+                print("exercise removed from fav")
             }
-        } catch {
-            print("didn't remove from fav: \(error.localizedDescription)")
-            throw error
+        } else {
+            dbUser.favWorkouts.append(exercise)
+            print("exercise added to fav")
         }
+        try userDocument(userId: dbUser.userid).setData(from: dbUser, merge: true, encoder: encoder)
     }
+    
+    
+    
+    
+    
+//    func addToFavourite(exercise: ExerciseModel, dbUser: inout DBUser) async throws {
+//        do {
+//           // let currAuthUser = try AuthenticationManager.shared.getAuthenticatedUser()
+//           // var dbUser = try await getUser(userId: currAuthUser.uid)
+//            if !dbUser.favWorkouts.contains(where: { $0.id == exercise.id }) {
+//                dbUser.favWorkouts.append(exercise)
+//                try userDocument(userId: dbUser.userid).setData(from: dbUser, merge: true, encoder: encoder)
+//              } else {
+//                  print("already there")
+//              }
+//        } catch {
+//            print("didn't add to fav: \(error.localizedDescription)")
+//            throw error
+//        }
+//    }
+//    
+//    func removeFromFavourite(exercise: ExerciseModel, dbUser: inout DBUser) async throws {
+//        do {
+//            if let index = dbUser.favWorkouts.firstIndex(where: { $0.id == exercise.id }) {
+//                dbUser.favWorkouts.remove(at: index)
+//                try userDocument(userId: dbUser.userid).setData(from: dbUser, merge: true, encoder: encoder)
+//            } else {
+//                print("did't found in fav")
+//            }
+//        } catch {
+//            print("didn't remove from fav: \(error.localizedDescription)")
+//            throw error
+//        }
+//    }
 }
