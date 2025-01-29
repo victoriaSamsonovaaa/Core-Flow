@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct WorkoutsView: View {
-    let workoutsByPart: WorkoutModel = Bundle.main.decode("workouts.json")
+   
+    @StateObject var viewModel = WorkoutsViewModel()
     
     var body: some View {
         NavigationStack {
@@ -19,47 +20,56 @@ struct WorkoutsView: View {
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .center)
                 
-                ForEach(workoutsByPart.muscle) { muscle in
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text(muscle.name)
-                                .font(.custom("Cochin-bold", size: 28))
-                            
-                            Rectangle()
-                                .frame(height: 1)
-                                .foregroundStyle(.customBlue.secondary)
-                                .padding(.horizontal, 6)
-                            
-                            Button {
+                if let workoutsByPart = viewModel.workoutsByPart {
+                    ForEach(workoutsByPart.muscle) { muscle in
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text(muscle.name)
+                                    .font(.custom("Cochin-bold", size: 28))
                                 
-                            } label: {
-                                Text("View all")
-                                    .font(.custom("Cochin-bold", size: 20))
+                                Rectangle()
+                                    .frame(height: 1)
+                                    .foregroundStyle(.customBlue.secondary)
+                                    .padding(.horizontal, 6)
+                                
+                                Button {
+                                    
+                                } label: {
+                                    Text("View all")
+                                        .font(.custom("Cochin-bold", size: 20))
+                                }
                             }
-                        }
-                        .foregroundStyle(.customGreen)
-                        .padding(.horizontal, 6)
-                        
-                        
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            LazyHStack {
-                                ForEach(muscle.exercises) { exercise in
-                                    NavigationLink {
-                                        ExerciseView(exercise: exercise, muscleName: muscle.name)
-                                    } label: {
-                                        ExerciseCellView(exercise: exercise)
+                            .foregroundStyle(.customGreen)
+                            .padding(.horizontal, 6)
+                            
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                LazyHStack {
+                                    ForEach(muscle.exercises) { exercise in
+                                        NavigationLink {
+                                            ExerciseView(exercise: exercise, muscleName: muscle.name)
+                                        } label: {
+                                            ExerciseCellView(exercise: exercise)
+                                        }
                                     }
                                 }
                             }
                         }
+                        .padding([.bottom, .leading], 10)
+                        .frame(maxWidth: .infinity)
                     }
-                    .padding([.bottom, .leading], 10)
-                    .frame(maxWidth: .infinity)
                 }
             }
             .navigationTitle("Select your exercises!")
             .navigationBarTitleTextColor(.customBlue)
-            //   .background(.customBlue)
+        }
+        .task {
+            do {
+                try await viewModel.loadCurrentUser()
+             //   print(viewModel.user)
+            } catch {
+                print("didn't got user: \(error)")
+            }
         }
     }
 }

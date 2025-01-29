@@ -84,24 +84,6 @@ struct ProfileView: View {
                 }
             }
             .tint(.customGreen)
-
-            
-//            NavigationStack {
-//                VStack {
-//                    List {
-//                        Text("userID: \(user.userid)")
-//                    }
-//                    .navigationTitle("Hello, \(user.fullname)!")
-//                    .task {
-//                        try? await viewModel.loadCurrentUser()
-//                    }
-//                    .scrollContentBackground(.hidden)
-//                    .listStyle(.plain)
-//                    
-//                }
-//                .tint(Color.customBlue)
-//                .frame(maxWidth: .infinity, maxHeight: .infinity)
-//            }
         }
 
     }

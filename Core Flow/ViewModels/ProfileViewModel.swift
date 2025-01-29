@@ -22,7 +22,7 @@ class ProfileViewModel: ObservableObject {
             do {
                 try await loadCurrentUser()
             } catch {
-                print("Ошибка загрузки пользователя: \(error)")
+                print("didn't got user: \(error)")
             }
         }
     }
