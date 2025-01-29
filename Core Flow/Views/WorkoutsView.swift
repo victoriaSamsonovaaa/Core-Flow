@@ -45,7 +45,7 @@ struct WorkoutsView: View {
                             LazyHStack {
                                 ForEach(muscle.exercises) { exercise in
                                     NavigationLink {
-                                        ExerciseView(exercise: exercise)
+                                        ExerciseView(exercise: exercise, muscleName: muscle.name)
                                     } label: {
                                         ExerciseCellView(exercise: exercise)
                                     }
