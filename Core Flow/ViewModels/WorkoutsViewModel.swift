@@ -31,7 +31,11 @@ class WorkoutsViewModel: ObservableObject {
     }
     
     func pressHeart(exercise: ExerciseModel) async throws {
-        try await UserManager.shared.pressHeart(exercise: exercise, dbUser: &user!)
+        do {
+            try await UserManager.shared.pressHeart(exercise: exercise)
+        } catch {
+            print("smth happened during tapping")
+        }
     }
     
 //    func addToFavourites(exercise: ExerciseModel) async throws {
