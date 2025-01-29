@@ -51,35 +51,35 @@ final class UserManager {
 //        return(index != nil, index)
 //    }
     
-    func isInDB(exercise: ExerciseModel, dbUser: DBUser) -> (Bool, Int?) {
+    func isInDB(exercise: ExerciseModel) async throws -> (Bool, Int?, DBUser) {
+        let currAuthUser = try AuthenticationManager.shared.getAuthenticatedUser()
+        let dbUser = try await getUser(userId: currAuthUser.uid)
+        
         let index = dbUser.favWorkouts.firstIndex {
             $0.workoutName == exercise.workoutName
         }
-
-        if let index = index {
-            print("Exercise found at index \(index)")
+        if index != nil {
+            print("exercise was found in db")
         } else {
-            print("Exercise not found in favorites")
+            print("exercise wasn't found in db")
         }
 
-        return (index != nil, index)
+        return (index != nil, index, dbUser)
     }
     
     func pressHeart(exercise: ExerciseModel) async throws {
-        let currAuthUser = try AuthenticationManager.shared.getAuthenticatedUser()
-        var dbUser = try await getUser(userId: currAuthUser.uid)
+        var (isInFavourite, index, user) = try await isInDB(exercise: exercise)
         
-        let (isInFavourite, index) = isInDB(exercise: exercise, dbUser: dbUser)
         if isInFavourite {
             if let index = index {
-                dbUser.favWorkouts.remove(at: index)
+                user.favWorkouts.remove(at: index)
                 print("exercise removed from fav")
             }
         } else {
-            dbUser.favWorkouts.append(exercise)
+            user.favWorkouts.append(exercise)
             print("exercise added to fav")
         }
-        try userDocument(userId: dbUser.userid).setData(from: dbUser, merge: true, encoder: encoder)
+        try userDocument(userId: user.userid).setData(from: user, merge: true, encoder: encoder)
     }
     
     

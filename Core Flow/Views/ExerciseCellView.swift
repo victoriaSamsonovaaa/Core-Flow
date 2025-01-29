@@ -10,7 +10,8 @@ import SwiftUI
 struct ExerciseCellView: View {
     @StateObject var viewModel = WorkoutsViewModel()
     let exercise: ExerciseModel
-  //  var isFav: Bool = false
+    
+    @State private var isFav: Bool = false
     
     var body: some View {
         VStack {
@@ -25,12 +26,12 @@ struct ExerciseCellView: View {
                 }
                 .overlay(alignment: .topTrailing) {
                     Button {
-                     //   isFav.toggle()
                         Task {
                             try await viewModel.pressHeart(exercise: exercise)
+                            //isFav.toggle()
                         }
                     } label: {
-                        Image(systemName: /*isFav ? "heart.fill" :*/ "heart" )
+                        Image(systemName: isFav ? "heart.fill" : "heart" )
                             .padding(12)
                     }
                 }
@@ -45,6 +46,15 @@ struct ExerciseCellView: View {
             .frame(maxWidth: .infinity)
             .background(.customBeige).opacity(0.8)
         }
+        .onAppear {
+            Task {
+                do {
+                    isFav = try await viewModel.isFav(exercise: exercise)
+                } catch {
+                    print("Failed to fetch favorite status: \(error)")
+                }
+            }
+        }
         .background(.white)
         .clipShape(.rect(cornerRadius: 13))
         .overlay(
@@ -55,7 +65,9 @@ struct ExerciseCellView: View {
         .padding(.bottom, 20)
     }
 }
-//
-//#Preview {
-//    ExerciseCellView()
-//}
+
+#Preview {
+    ExerciseCellView(exercise: ExerciseModel(workoutName: "aaa", workoutDescription: "aaaaaaaaaa", workoutExplanation: "sssssssssss", workoutImage: "", workoutDifficulty: 4))
+}
+
+
