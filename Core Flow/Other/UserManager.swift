@@ -44,14 +44,31 @@ final class UserManager {
         }
     }
     
+//    func isInDB(exercise: ExerciseModel, dbUser: DBUser) -> (Bool, Int?) {
+//        let index = dbUser.favWorkouts.firstIndex {
+//            $0.workoutName == exercise.workoutName
+//        }
+//        return(index != nil, index)
+//    }
+    
     func isInDB(exercise: ExerciseModel, dbUser: DBUser) -> (Bool, Int?) {
         let index = dbUser.favWorkouts.firstIndex {
-            $0.id == exercise.id
+            $0.workoutName == exercise.workoutName
         }
-        return(index != nil, index)
+
+        if let index = index {
+            print("Exercise found at index \(index)")
+        } else {
+            print("Exercise not found in favorites")
+        }
+
+        return (index != nil, index)
     }
     
-    func pressHeart(exercise: ExerciseModel, dbUser: inout DBUser) async throws {
+    func pressHeart(exercise: ExerciseModel) async throws {
+        let currAuthUser = try AuthenticationManager.shared.getAuthenticatedUser()
+        var dbUser = try await getUser(userId: currAuthUser.uid)
+        
         let (isInFavourite, index) = isInDB(exercise: exercise, dbUser: dbUser)
         if isInFavourite {
             if let index = index {
@@ -67,12 +84,10 @@ final class UserManager {
     
     
     
-    
-    
 //    func addToFavourite(exercise: ExerciseModel, dbUser: inout DBUser) async throws {
 //        do {
-//           // let currAuthUser = try AuthenticationManager.shared.getAuthenticatedUser()
-//           // var dbUser = try await getUser(userId: currAuthUser.uid)
+//            let currAuthUser = try AuthenticationManager.shared.getAuthenticatedUser()
+//            var dbUser = try await getUser(userId: currAuthUser.uid)
 //            if !dbUser.favWorkouts.contains(where: { $0.id == exercise.id }) {
 //                dbUser.favWorkouts.append(exercise)
 //                try userDocument(userId: dbUser.userid).setData(from: dbUser, merge: true, encoder: encoder)

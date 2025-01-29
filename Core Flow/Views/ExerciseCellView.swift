@@ -27,7 +27,7 @@ struct ExerciseCellView: View {
                     Button {
                      //   isFav.toggle()
                         Task {
-                            try await viewModel.addToFavourites(exercise: exercise)
+                            try await viewModel.pressHeart(exercise: exercise)
                         }
                     } label: {
                         Image(systemName: /*isFav ? "heart.fill" :*/ "heart" )
