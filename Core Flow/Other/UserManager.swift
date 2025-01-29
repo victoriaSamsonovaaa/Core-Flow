@@ -39,15 +39,15 @@ final class UserManager {
         do {
             return try await Firestore.firestore().collection("users").document(userId).getDocument(as: DBUser.self, decoder: decoder)
         } catch {
-            print("Ошибка при получении пользователя из Firestore: \(error.localizedDescription)")
+            print("didn't get user from firestore: \(error.localizedDescription)")
             throw error
         }
     }
     
-    func addToFavourite(exercise: ExerciseModel) async throws {
+    func addToFavourite(exercise: ExerciseModel, dbUser: inout DBUser) async throws {
         do {
-            let currAuthUser = try AuthenticationManager.shared.getAuthenticatedUser()
-            var dbUser = try await getUser(userId: currAuthUser.uid)
+           // let currAuthUser = try AuthenticationManager.shared.getAuthenticatedUser()
+           // var dbUser = try await getUser(userId: currAuthUser.uid)
             if !dbUser.favWorkouts.contains(where: { $0.id == exercise.id }) {
                 dbUser.favWorkouts.append(exercise)
                 try userDocument(userId: dbUser.userid).setData(from: dbUser, merge: true, encoder: encoder)
@@ -55,7 +55,21 @@ final class UserManager {
                   print("already there")
               }
         } catch {
-            print("error: \(error.localizedDescription)")
+            print("didn't add to fav: \(error.localizedDescription)")
+            throw error
+        }
+    }
+    
+    func removeFromFavourite(exercise: ExerciseModel, dbUser: inout DBUser) async throws {
+        do {
+            if let index = dbUser.favWorkouts.firstIndex(where: { $0.id == exercise.id }) {
+                dbUser.favWorkouts.remove(at: index)
+                try userDocument(userId: dbUser.userid).setData(from: dbUser, merge: true, encoder: encoder)
+            } else {
+                print("did't found in fav")
+            }
+        } catch {
+            print("didn't remove from fav: \(error.localizedDescription)")
             throw error
         }
     }

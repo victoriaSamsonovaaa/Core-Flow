@@ -9,23 +9,39 @@ import Foundation
 import SwiftData
 
 class WorkoutsViewModel: ObservableObject {
-    @Published var favoriteIds: Set<Int> = []
     
-//    func loadFavorites() async {
-//        do {
-//            let currentUser = try AuthenticationManager.shared.getAuthenticatedUser()
-//            let dbUser = try await UserManager.shared.getUser(userId: currentUser.uid)
-//            let favIds = dbUser.favWorkouts.map { $0.id }
-//            favoriteIds = Set(f)
-//            markFavorites()
-//        } catch {
-//            print("Не удалось загрузить избранные упражнения: \(error.localizedDescription)")
+    @Published var workoutsByPart: WorkoutModel?
+    @Published var user: DBUser? = nil
+    
+
+    init() {
+        loadFromJson()
+//        Task {
+//            do {
+//                try await loadCurrentUser()
+//            } catch {
+//                print("didn't got user: \(error)")
+//            }
 //        }
-//    }
+        
+    }
+    
+    func loadCurrentUser() async throws {
+        let authDataRes = try AuthenticationManager.shared.getAuthenticatedUser()
+        self.user = try await UserManager.shared.getUser(userId: authDataRes.uid)
+    }
+    
+    func loadFromJson() {
+        if let decodedWorkouts: WorkoutModel = Bundle.main.decode("workouts.json") {
+            workoutsByPart = decodedWorkouts
+        } else {
+            print("failed to decode workouts.json")
+        }
+    }
     
     func addToFavourites(exercise: ExerciseModel) async throws {
-        try await UserManager.shared.addToFavourite(exercise: exercise)
-        print("exercise added")
+        try await UserManager.shared.addToFavourite(exercise: exercise, dbUser: &user!)
+        print("exercise added to fav")
     }
-
 }
+
