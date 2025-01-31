@@ -48,7 +48,7 @@ struct ProfileView: View {
                         }
                         
                         NavigationLink {
-                            
+                            FavouritesView()
                         } label: {
                             ProfileRowView(imageName: "heart.rectangle.fill", title: "My favourites", tint: .customGreen)
                         }
