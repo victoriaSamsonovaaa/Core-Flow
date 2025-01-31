@@ -59,22 +59,16 @@ struct ExerciseView: View {
                     .toolbar {
                         ToolbarItem {
                             Menu {
-                                ShareLink(item: Image(exercise.workoutImage), preview: SharePreview("Exercise", image: Image(exercise.workoutImage))) {
-                                    Label("Share", systemImage: "square.and.arrow.up")
-                                }
-                                
-                                Divider()
-                                
                                 Button {
                                     
                                 } label: {
                                     Label("Add to Favorites", systemImage: "heart")
                                 }
                                 
-                                Button(role: .destructive) {
-                                    
-                                } label: {
-                                    Label("Hide this exercise", systemImage: "eye.slash")
+                                Divider()
+                                
+                                ShareLink(item: Image(exercise.workoutImage), preview: SharePreview("Exercise", image: Image(exercise.workoutImage))) {
+                                    Label("Share", systemImage: "square.and.arrow.up")
                                 }
                                 
                             } label: {

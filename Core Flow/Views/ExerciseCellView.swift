@@ -46,15 +46,15 @@ struct ExerciseCellView: View {
             .frame(maxWidth: .infinity)
             .background(.customBeige).opacity(0.8)
         }
-        .onAppear {
-            Task {
-                do {
-                    isFav = try await viewModel.isFav(exercise: exercise)
-                } catch {
-                    print("Failed to fetch favorite status: \(error)")
-                }
-            }
-        }
+//        .onAppear {
+//            Task {
+//                do {
+//                    isFav = try await viewModel.isFav(exercise: exercise)
+//                } catch {
+//                    print("Failed to fetch favorite status: \(error)")
+//                }
+//            }
+//        }
         .background(.white)
         .clipShape(.rect(cornerRadius: 13))
         .overlay(
