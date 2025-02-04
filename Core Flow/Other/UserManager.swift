@@ -44,13 +44,6 @@ final class UserManager {
         }
     }
     
-//    func isInDB(exercise: ExerciseModel, dbUser: DBUser) -> (Bool, Int?) {
-//        let index = dbUser.favWorkouts.firstIndex {
-//            $0.workoutName == exercise.workoutName
-//        }
-//        return(index != nil, index)
-//    }
-    
     func isInDB(exercise: ExerciseModel) async throws -> (Bool, Int?, DBUser) {
         let currAuthUser = try AuthenticationManager.shared.getAuthenticatedUser()
         let dbUser = try await getUser(userId: currAuthUser.uid)
@@ -69,7 +62,7 @@ final class UserManager {
     
     func pressHeart(exercise: ExerciseModel) async throws {
         var (isInFavourite, index, user) = try await isInDB(exercise: exercise)
-        
+
         if isInFavourite {
             if let index = index {
                 user.favWorkouts.remove(at: index)
@@ -82,8 +75,19 @@ final class UserManager {
         try userDocument(userId: user.userid).setData(from: user, merge: true, encoder: encoder)
     }
     
-    
-    
+    func getFavouritesExercises() async throws -> [ExerciseModel] {
+        var fav = [ExerciseModel]()
+        let currAuthUser = try AuthenticationManager.shared.getAuthenticatedUser()
+        let dbUser = try await getUser(userId: currAuthUser.uid)
+        
+        dbUser.favWorkouts.forEach {
+            fav.append($0)
+        }
+        return fav
+    }
+}
+
+
 //    func addToFavourite(exercise: ExerciseModel, dbUser: inout DBUser) async throws {
 //        do {
 //            let currAuthUser = try AuthenticationManager.shared.getAuthenticatedUser()
@@ -99,7 +103,7 @@ final class UserManager {
 //            throw error
 //        }
 //    }
-//    
+//
 //    func removeFromFavourite(exercise: ExerciseModel, dbUser: inout DBUser) async throws {
 //        do {
 //            if let index = dbUser.favWorkouts.firstIndex(where: { $0.id == exercise.id }) {
@@ -113,4 +117,3 @@ final class UserManager {
 //            throw error
 //        }
 //    }
-}

@@ -83,6 +83,7 @@ struct ProfileView: View {
                     }
                 }
             }
+            .environmentObject(viewModel)
             .tint(.customGreen)
         }
 
