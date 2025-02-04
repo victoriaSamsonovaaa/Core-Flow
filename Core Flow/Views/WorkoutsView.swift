@@ -49,7 +49,7 @@ struct WorkoutsView: View {
                                         NavigationLink {
                                             ExerciseView(exercise: exercise, muscleName: muscle.name)
                                         } label: {
-                                            ExerciseCellView(exercise: exercise)
+                                            ExerciseCellView(exercise: exercise, imageHeight: 100, imageWidth: 200, ratingSize: 10, nameSize: 24, likeSize: 16, likePadding: 12)
                                         }
                                     }
                                 }
