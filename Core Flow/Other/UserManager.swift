@@ -65,11 +65,14 @@ final class UserManager {
 
         if isInFavourite {
             if let index = index {
+                user.favWorkouts[index].isFavourite = false
                 user.favWorkouts.remove(at: index)
                 print("exercise removed from fav")
             }
         } else {
-            user.favWorkouts.append(exercise)
+            var updatedExercise = exercise
+            updatedExercise.isFavourite = true
+            user.favWorkouts.append(updatedExercise)
             print("exercise added to fav")
         }
         try userDocument(userId: user.userid).setData(from: user, merge: true, encoder: encoder)
