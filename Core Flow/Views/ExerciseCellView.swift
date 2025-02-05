@@ -12,13 +12,25 @@ struct ExerciseCellView: View {
     @StateObject var viewModel = WorkoutsViewModel()
     let exercise: ExerciseModel
     
-    @State private var isFav: Bool = false
+    @State private var isFavourite: Bool
+    
     var imageHeight: CGFloat
     var imageWidth: CGFloat
     var ratingSize: CGFloat
     var nameSize: CGFloat
     var likeSize: CGFloat
     var likePadding: CGFloat
+
+    init(exercise: ExerciseModel, imageHeight: CGFloat, imageWidth: CGFloat, ratingSize: CGFloat, nameSize: CGFloat, likeSize: CGFloat, likePadding: CGFloat) {
+        self.exercise = exercise
+        _isFavourite = State(initialValue: exercise.isFavourite)
+        self.imageHeight = imageHeight
+        self.imageWidth = imageWidth
+        self.ratingSize = ratingSize
+        self.nameSize = nameSize
+        self.likeSize = likeSize
+        self.likePadding = likePadding
+    }
     
     var body: some View {
         VStack {
@@ -34,11 +46,11 @@ struct ExerciseCellView: View {
                 .overlay(alignment: .topTrailing) {
                     Button {
                         Task {
+                            isFavourite.toggle()
                             try await viewModel.pressHeart(exercise: exercise)
-                            //isFav.toggle()
                         }
                     } label: {
-                        Image(systemName: isFav ? "heart.fill" : "heart" )
+                        Image(systemName: isFavourite ? "heart.fill" : "heart" )
                             .font(.system(size: likeSize))
                             .padding(likePadding)
                     }
@@ -54,15 +66,6 @@ struct ExerciseCellView: View {
             .frame(maxWidth: .infinity)
             .background(.customBeige).opacity(0.8)
         }
-//        .onAppear {
-//            Task {
-//                do {
-//                    isFav = try await viewModel.isFav(exercise: exercise)
-//                } catch {
-//                    print("Failed to fetch favorite status: \(error)")
-//                }
-//            }
-//        }
         .background(.white)
         .clipShape(.rect(cornerRadius: 13))
         .overlay(
@@ -77,5 +80,4 @@ struct ExerciseCellView: View {
 #Preview {
     ExerciseCellView(exercise: ExerciseModel(workoutName: "aaa", workoutDescription: "aaaaaaaaaa", workoutExplanation: "sssssssssss", workoutImage: "", workoutDifficulty: 4), imageHeight: 100, imageWidth: 200, ratingSize: 10, nameSize: 24, likeSize: 16, likePadding: 12)
 }
-
 
