@@ -8,12 +8,21 @@
 import SwiftUI
 
 struct ExerciseView: View {
+    
+    @EnvironmentObject var exerciseModel: ExerciseViewModel
+    @State private var isFavourite: Bool
     let exercise: ExerciseModel
     let workoutsByPart: WorkoutModel = Bundle.main.decode("workouts.json")
     let muscleName: String
+
+    init(exercise: ExerciseModel, muscleName: String) {
+        _isFavourite = State(initialValue: exercise.isFavourite)
+        self.exercise = exercise
+        self.muscleName = muscleName
+    }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 VStack {
                     Text("\(muscleName) muscles group")
@@ -62,7 +71,7 @@ struct ExerciseView: View {
                                 Button {
                                     
                                 } label: {
-                                    Label("Add to Favorites", systemImage: "heart")
+                                    Label(isFavourite ? "Remove from Favourites" : "Add to Favorites", systemImage: isFavourite ? "heart.fill" : "heart")
                                 }
                                 
                                 Divider()

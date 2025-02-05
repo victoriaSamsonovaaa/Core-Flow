@@ -28,14 +28,14 @@ struct SignInView: View {
                     .font(.custom("Cochin", size: 24))
                     .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                     .padding(.bottom, 4)
-                CustomTextField(placeholder: "Enter your Email", text: $viewModel.email)
+                CustomTextField(text: $viewModel.email, placeholder: "Enter your Email")
                     .padding(.bottom, 22)
                 
                 Text("Password")
                     .font(.custom("Cochin", size: 24))
                     .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                     .padding(.bottom, 4)
-                CustomSecureField(placeholder: "Enter your password", text: $viewModel.password)
+                CustomSecureField(text: $viewModel.password, placeholder: "Enter your password")
                     .padding(.bottom, 20)
                 
                 HStack {

@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct CustomTextField: View {
-    var placeholder: String
+    
     @Binding var text: String
+    var placeholder: String
     
     var body: some View {
         TextField("", text: $text, prompt: Text(placeholder).foregroundColor(Color.gray))
@@ -24,9 +25,12 @@ struct CustomTextField: View {
     }
 }
 
+
+
 struct CustomSecureField: View {
-    var placeholder: String
+    
     @Binding var text: String
+    var placeholder: String
     
     var body: some View {
         SecureField("", text: $text, prompt: Text(placeholder).foregroundColor(Color.gray))

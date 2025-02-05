@@ -9,11 +9,9 @@ import SwiftUI
 
 struct ExerciseCellView: View {
     
-    @StateObject var viewModel = WorkoutsViewModel()
-    let exercise: ExerciseModel
-    
+    @EnvironmentObject var viewModel: ExerciseViewModel
     @State private var isFavourite: Bool
-    
+    let exercise: ExerciseModel
     var imageHeight: CGFloat
     var imageWidth: CGFloat
     var ratingSize: CGFloat
@@ -53,6 +51,7 @@ struct ExerciseCellView: View {
                         Image(systemName: isFavourite ? "heart.fill" : "heart" )
                             .font(.system(size: likeSize))
                             .padding(likePadding)
+                            .tint(.customBlue)
                     }
                 }
             

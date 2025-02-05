@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WorkoutsView: View {
    
-    @StateObject var viewModel = WorkoutsViewModel()
+    @StateObject var viewModel = ExerciseViewModel()
     
     var body: some View {
         NavigationStack {
@@ -63,6 +63,7 @@ struct WorkoutsView: View {
             .navigationTitle("Select your exercises!")
             .navigationBarTitleTextColor(.customBlue)
         }
+        .environmentObject(viewModel)
         .task {
             do {
                 try await viewModel.loadCurrentUser()

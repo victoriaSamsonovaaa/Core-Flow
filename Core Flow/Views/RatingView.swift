@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct RatingView: View {
+    
     var rating: Int
     var frame: CGFloat
     var space: CGFloat
-    
     var maximumRating = 5
     var offColor = Color.gray
     var onColor = Color.yellow

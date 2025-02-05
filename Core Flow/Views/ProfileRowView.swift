@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileRowView: View {
+    
     let imageName: String
     let title: String
     let tint: Color

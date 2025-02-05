@@ -13,7 +13,6 @@ import CryptoKit
 class SignUpViewModel: ObservableObject {
     
     let signInAppleHelper = SignInAppleHelper()
-    
     @Published var fullName: String = ""
     @Published var email: String = ""
     @Published var password: String = ""

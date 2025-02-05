@@ -12,7 +12,6 @@ struct MainTabScreenView: View {
     enum Tab {
         case home, goals, settings
     }
-
     @State private var selectedTab: Tab = .home
 
     var body: some View {
