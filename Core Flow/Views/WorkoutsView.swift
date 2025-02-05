@@ -10,6 +10,8 @@ import SwiftUI
 struct WorkoutsView: View {
    
     @StateObject var viewModel = ExerciseViewModel()
+ //   @State private var fav = [ExerciseModel]()
+ //   @State private var isF = false
     
     var body: some View {
         NavigationStack {
@@ -67,7 +69,6 @@ struct WorkoutsView: View {
         .task {
             do {
                 try await viewModel.loadCurrentUser()
-             //   print(viewModel.user)
             } catch {
                 print("didn't got user: \(error)")
             }

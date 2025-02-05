@@ -56,7 +56,6 @@ final class UserManager {
         } else {
             print("exercise wasn't found in db")
         }
-
         return (index != nil, index, dbUser)
     }
     
@@ -70,23 +69,18 @@ final class UserManager {
                 print("exercise removed from fav")
             }
         } else {
-            var updatedExercise = exercise
-            updatedExercise.isFavourite = true
-            user.favWorkouts.append(updatedExercise)
+            user.favWorkouts.append(exercise)
+            var lastEx = user.favWorkouts.last
+            lastEx?.isFavourite = true
             print("exercise added to fav")
         }
         try userDocument(userId: user.userid).setData(from: user, merge: true, encoder: encoder)
     }
     
     func getFavouritesExercises() async throws -> [ExerciseModel] {
-        var fav = [ExerciseModel]()
         let currAuthUser = try AuthenticationManager.shared.getAuthenticatedUser()
         let dbUser = try await getUser(userId: currAuthUser.uid)
-        
-        dbUser.favWorkouts.forEach {
-            fav.append($0)
-        }
-        return fav
+        return dbUser.favWorkouts
     }
 }
 
@@ -120,3 +114,5 @@ final class UserManager {
 //            throw error
 //        }
 //    }
+
+// мне кажется в этой функции что-то не так. потому что при добавлении в массив favourites упражнения все равно с isFavourite = false

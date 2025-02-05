@@ -10,6 +10,7 @@ import Foundation
 class ExerciseViewModel: ObservableObject {
     
     @Published var workoutsByPart: WorkoutModel?
+    @Published var favWorkouts: [ExerciseModel] = []
     @Published var user: DBUser? = nil
 
     init() {
@@ -27,6 +28,14 @@ class ExerciseViewModel: ObservableObject {
         } else {
             print("failed to decode workouts.json")
         }
+    }
+    
+    func loadFavourites() {
+        
+    }
+    
+    func fetchFavouriteExercises() async throws {
+        self.favWorkouts = try await UserManager.shared.getFavouritesExercises()
     }
     
     func pressHeart(exercise: ExerciseModel) async throws {
