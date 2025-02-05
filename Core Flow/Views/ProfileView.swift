@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var isAuth: Bool = false
-    @StateObject private var viewModel = ProfileViewModel()
     
+    @StateObject private var viewModel = ProfileViewModel()
+    @State private var isAuth: Bool = false
+
     var body: some View {
         if let user = viewModel.user {
             NavigationStack {

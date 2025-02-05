@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
     @StateObject private var viewModel = SettingsViewModel()
     @Binding var /*@State private var*/ isAuthenticated: Bool 
     

@@ -17,15 +17,12 @@ class SignInViewModel: ObservableObject {
     @Published var password: String = ""
     @Published var customMessage: String = ""
     
-    
     func signIn() async throws {
         guard !email.isEmpty, !password.isEmpty else {
             customMessage = "You couldn't leave fields empty"
             return
         }
-        
         try await AuthenticationManager.shared.signInUser(email: email, password: password)
-    
     }
     
     func signUpWithGoogle() async throws {

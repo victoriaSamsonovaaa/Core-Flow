@@ -10,12 +10,9 @@ import SwiftUI
 struct FavouritesView: View {
     
     @EnvironmentObject var userModel: ProfileViewModel
-    
     let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
-    
-  //  let favWorkouts: WorkoutModel = Bundle.main.decode("workouts.json")
     
     var body: some View {
         if let favWorkouts = userModel.user?.favWorkouts {

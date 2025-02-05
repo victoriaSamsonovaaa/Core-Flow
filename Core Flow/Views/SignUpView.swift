@@ -12,13 +12,13 @@ import AuthenticationServices
 import UIKit
 
 struct SignUpView: View {
-    @StateObject private var viewModel = SignUpViewModel()
     
-    @Binding var isAuthenticated: Bool
+    @StateObject private var viewModel = SignUpViewModel()
     @State private var emailOutput: String = ""
     @State private var passwordOutput: String = ""
     @State private var secondPasswordOutput: String = ""
     @State private var isSuccessfully: Bool = false
+    @Binding var isAuthenticated: Bool
 
     var body: some View {
         VStack(alignment: .center) {
@@ -36,21 +36,21 @@ struct SignUpView: View {
                     .font(.custom("Cochin-Bold", size: 24))
                     .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                     .padding(.bottom, 2)
-                CustomTextField(placeholder: "Enter your Name", text: $viewModel.fullName)
+                CustomTextField(text: $viewModel.fullName, placeholder: "Enter your Name")
                     .padding(.bottom, 22)
 
                 Text("Email")
                     .font(.custom("Cochin-Bold", size: 24))
                     .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                     .padding(.bottom, 2)
-                CustomTextField(placeholder: "Enter your Email", text: $viewModel.email)
+                CustomTextField(text: $viewModel.email, placeholder: "Enter your Email")
                     .padding(.bottom, 22)
 
                 Text("Password")
                     .font(.custom("Cochin-Bold", size: 24))
                     .foregroundStyle(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
                     .padding(.bottom, 2)
-                CustomSecureField(placeholder: "Create password", text: $viewModel.password)
+                CustomSecureField(text: $viewModel.password, placeholder: "Create password")
                     .padding(.bottom, 20)
 
                 Toggle(isOn: $viewModel.isAgree) {
@@ -150,7 +150,6 @@ struct SignUpView: View {
              }
     }
 }
-
 
 
 #Preview {
