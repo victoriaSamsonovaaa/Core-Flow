@@ -28,6 +28,7 @@ struct ExerciseCellView: View {
         self.nameSize = nameSize
         self.likeSize = likeSize
         self.likePadding = likePadding
+        print("Initializing \(exercise.workoutName) ExerciseCellView with isFavourite: \(exercise.isFavourite)")
     }
     
     var body: some View {
@@ -46,6 +47,7 @@ struct ExerciseCellView: View {
                         Task {
                             isFavourite.toggle()
                             try await viewModel.pressHeart(exercise: exercise)
+                            print("Toggled isFavourite to: \(isFavourite)")
                         }
                     } label: {
                         Image(systemName: isFavourite ? "heart.fill" : "heart" )
@@ -65,6 +67,13 @@ struct ExerciseCellView: View {
             .frame(maxWidth: .infinity)
             .background(.customBeige).opacity(0.8)
         }
+//        .task {
+//            do {
+//                isFavourite = try await viewModel.isFav(exercise: exercise)
+//            } catch {
+//                print("Ошибка при проверке избранного: \(error)")
+//            }
+//        }
         .background(.white)
         .clipShape(.rect(cornerRadius: 13))
         .overlay(
