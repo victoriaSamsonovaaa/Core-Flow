@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class ExerciseViewModel: ObservableObject {
     
     @Published var workoutsByPart: WorkoutModel?
@@ -28,10 +29,6 @@ class ExerciseViewModel: ObservableObject {
         } else {
             print("failed to decode workouts.json")
         }
-    }
-    
-    func loadFavourites() {
-        
     }
     
     func fetchFavouriteExercises() async throws {

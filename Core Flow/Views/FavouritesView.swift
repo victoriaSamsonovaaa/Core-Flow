@@ -9,39 +9,48 @@ import SwiftUI
 
 struct FavouritesView: View {
     
-    @EnvironmentObject var userModel: ProfileViewModel
+    @EnvironmentObject var userModel: ExerciseViewModel
     let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
     
     var body: some View {
-        if let favWorkouts = userModel.user?.favWorkouts {
-            NavigationStack {
-                ScrollView {
-                    Text("Favourite workouts")
+        VStack {
+            if userModel.favWorkouts.isEmpty {
+                VStack {
+                    Text("You don't have favourite workouts")
                         .foregroundStyle(.customBlue)
                         .font(.custom("Cochin-bold", size: 27))
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .center)
-                    LazyVGrid(columns: columns) {
-                        ForEach(favWorkouts) { work in
-                            NavigationLink {
-                                ExerciseView(exercise: work, muscleName: "aaa")
-                            } label: {
-                                ExerciseCellView(exercise: work, imageHeight: 80, imageWidth: 150, ratingSize: 8, nameSize: 16, likeSize: 12, likePadding: 10)
+                }
+            }
+            else {
+                NavigationStack {
+                    ScrollView {
+                        Text("Favourite workouts")
+                            .foregroundStyle(.customBlue)
+                            .font(.custom("Cochin-bold", size: 27))
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment: .center)
+                        LazyVGrid(columns: columns) {
+                            ForEach(userModel.favWorkouts) { work in
+                                NavigationLink {
+                                    ExerciseView(exercise: work, muscleName: "aaa")
+                                } label: {
+                                    ExerciseCellView(exercise: work, imageHeight: 80, imageWidth: 150, ratingSize: 8, nameSize: 16, likeSize: 12, likePadding: 10)
+                                }
                             }
                         }
+                        
                     }
                 }
             }
         }
-        else {
-            VStack {
-                Text("You don't have favourite wirkouts")
-                    .foregroundStyle(.customBlue)
-                    .font(.custom("Cochin-bold", size: 27))
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .center)
+        .onAppear() {
+         //   fav = userModel.user?.favWorkouts ?? []
+            Task {
+                try await userModel.fetchFavouriteExercises()
             }
         }
     }

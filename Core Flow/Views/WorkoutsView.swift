@@ -10,8 +10,6 @@ import SwiftUI
 struct WorkoutsView: View {
    
     @StateObject var viewModel = ExerciseViewModel()
- //   @State private var fav = [ExerciseModel]()
- //   @State private var isF = false
     
     var body: some View {
         NavigationStack {

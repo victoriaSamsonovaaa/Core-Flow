@@ -14,6 +14,10 @@ class ProfileViewModel: ObservableObject {
     
     func loadCurrentUser() async throws {
         let authDataRes = try AuthenticationManager.shared.getAuthenticatedUser()
+        print("got authDataRes")
+        print(authDataRes.uid)
+        print(authDataRes.email ?? "nooooo")
+        print()
         self.user = try await UserManager.shared.getUser(userId: authDataRes.uid)
     }
     
