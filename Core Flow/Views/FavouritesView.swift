@@ -20,7 +20,7 @@ struct FavouritesView: View {
                 VStack {
                     Text("You don't have favourite workouts")
                         .foregroundStyle(.customBlue)
-                        .font(.custom("Cochin-bold", size: 27))
+                        .font(.custom("Cochin-bold", size: 20))
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
@@ -48,7 +48,6 @@ struct FavouritesView: View {
             }
         }
         .onAppear() {
-         //   fav = userModel.user?.favWorkouts ?? []
             Task {
                 try await userModel.fetchFavouriteExercises()
             }

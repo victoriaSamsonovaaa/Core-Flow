@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct HomeView: View {
-    
-//    @EnvironmentObject var healtManager: HealthManager
-    
     var body: some View {
         VStack {
             LazyVGrid(columns: Array(repeating: GridItem(spacing: 20), count: 2)){
@@ -19,7 +16,6 @@ struct HomeView: View {
             }
             .padding(.horizontal)
         }
-   //     .frame(maxWidth: .infinity, maxHeight: .infinity)
 
     }
 }
