@@ -114,5 +114,3 @@ final class UserManager {
 //            throw error
 //        }
 //    }
-
-// мне кажется в этой функции что-то не так. потому что при добавлении в массив favourites упражнения все равно с isFavourite = false
