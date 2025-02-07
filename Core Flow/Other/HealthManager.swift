@@ -7,22 +7,44 @@
 
 import Foundation
 import HealthKit
+import WidgetKit
 
 class HealthManager: ObservableObject {
     
-//    let healthStore = HKHealthStore()
-//    
-//    init() {
-//        let steps = HKQuantityType(.stepCount)
-//        let  healthTypes: Set = [steps]
-//        
-//        Task {
-//            do {
-//                try await healthStore.requestAuthorization(toShare: [], read: healthTypes)
-//            } catch {
-//                print("error fetching health data")
-//            }
-//        }
-//    }
+    static let shared = HealthManager()
+    var healthStore = HKHealthStore()
+
+    func requestAuth() {
+        let dataToRead = Set([
+            HKObjectType.quantityType(forIdentifier: .stepCount)!,
+            HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!])
+                             
+        guard HKHealthStore.isHealthDataAvailable() else {
+          print("health data not available!")
+          return
+        }
+            
+        healthStore.requestAuthorization(toShare: nil, read: dataToRead) { success, failure in
+            if success {
+                self.fetchAllData()
+            } else {
+                print("didn't get auth in health")
+            }
+        }
+    }
+    
+    func fetchAllData() {
+
+    }
+
+    private init() {
+        let calories = HKQuantityType(.activeEnergyBurned)
+        let exerciseTime = HKQuantityType(.appleExerciseTime)
+        let stand = HKCategoryType(.appleStandHour)
+        
+        let healthTypes: Set = [calories, exerciseTime, stand]
+    }
+    
+    
     
 }
