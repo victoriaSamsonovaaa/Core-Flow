@@ -67,13 +67,6 @@ struct ExerciseCellView: View {
             .frame(maxWidth: .infinity)
             .background(.customBeige).opacity(0.8)
         }
-//        .task {
-//            do {
-//                isFavourite = try await viewModel.isFav(exercise: exercise)
-//            } catch {
-//                print("Ошибка при проверке избранного: \(error)")
-//            }
-//        }
         .background(.white)
         .clipShape(.rect(cornerRadius: 13))
         .overlay(
