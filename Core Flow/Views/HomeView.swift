@@ -13,15 +13,16 @@ struct HomeView: View {
     @State var active: Int = 10
     @State var stand: Int = 15
     
+    var mockActiv = [
+        Activity(id: 0, title: "Daily stepss", subtitle: "Goal: 12.000", image: "figure.walk", tintColor: .green, amount: "6.893"),
+        Activity(id: 1, title: "Daily stepss", subtitle: "Goal: 12.000", image: "figure.walk", tintColor: .red, amount: "943"),
+        Activity(id: 2, title: "Daily stepss", subtitle: "Goal: 12.000", image: "figure.walk", tintColor: .purple, amount: "8.567"),
+        Activity(id: 3, title: "Daily stepss", subtitle: "Goal: 12.000", image: "figure.walk", tintColor: .blue, amount: "1.032")
+    ]
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
-            VStack {
-    //            LazyVGrid(columns: Array(repeating: GridItem(spacing: 20), count: 2)){
-    //                ActivityLabelView()
-    //                ActivityLabelView()
-    //            }
-    //            .padding(.horizontal)
-                
+            VStack(alignment: .leading, spacing: 8) {
                 Text("Welcome")
                     .font(.largeTitle)
                     .padding()
@@ -70,7 +71,16 @@ struct HomeView: View {
                         ProgressRingView(progress: $stand, goal: 13, color: .blue)
                             .padding(40)
                     }
+                    .padding(.horizontal)
                 }
+                .padding()
+                
+                LazyVGrid(columns: Array(repeating: GridItem(spacing: 20), count: 2)) {
+                    ForEach(mockActiv, id: \.id) { act in
+                        ActivityLabelView(activity: act)
+                    }
+                }
+                .padding(.horizontal)
             }
         }
     }
