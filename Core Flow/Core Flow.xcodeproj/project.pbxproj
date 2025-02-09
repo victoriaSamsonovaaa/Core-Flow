@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF1672CB2D593B3400DF0C37 /* SignInAppleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1672C42D593B3400DF0C37 /* SignInAppleHelper.swift */; };
+		AF1672CC2D593B3400DF0C37 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1672C52D593B3400DF0C37 /* SignInGoogleHelper.swift */; };
 		AF4F491D2D22B19600CA0E34 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = AF4F491C2D22B19600CA0E34 /* FirebaseAnalytics */; };
 		AF4F491F2D22B19600CA0E34 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AF4F491E2D22B19600CA0E34 /* FirebaseAuth */; };
 		AF4F49212D22B19600CA0E34 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AF4F49202D22B19600CA0E34 /* FirebaseAuthCombine-Community */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF1672C42D593B3400DF0C37 /* SignInAppleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleHelper.swift; sourceTree = "<group>"; };
+		AF1672C52D593B3400DF0C37 /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
 		AF5041962D3801EB009109DB /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		AFDE431E2D32CE03009D0DF6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AFDE43242D32D204009D0DF6 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -28,6 +32,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		AF1673112D593C5700DF0C37 /* Managers */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		AFF470B52D2170FD00ACA175 /* Core Flow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Core Flow";
@@ -83,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				AFDE43242D32D204009D0DF6 /* Utilities.swift */,
+				AF1672C52D593B3400DF0C37 /* SignInGoogleHelper.swift */,
+				AF1672C42D593B3400DF0C37 /* SignInAppleHelper.swift */,
 				AFE230612D35ABCA002F5B0E /* Bundle-Decodable.swift */,
 				AF5041962D3801EB009109DB /* ViewExtensions.swift */,
 			);
@@ -92,6 +103,7 @@
 		AFF470AA2D2170FD00ACA175 = {
 			isa = PBXGroup;
 			children = (
+				AF1673112D593C5700DF0C37 /* Managers */,
 				AFDE43262D32D31F009D0DF6 /* Utilities */,
 				AFF470C72D2171AA00ACA175 /* Other */,
 				AFF470C62D21719F00ACA175 /* ViewModels */,
@@ -128,6 +140,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				AF1673112D593C5700DF0C37 /* Managers */,
 				AFF470B52D2170FD00ACA175 /* Core Flow */,
 				AFF470C42D21719100ACA175 /* Views */,
 				AFF470C52D21719800ACA175 /* Models */,
@@ -201,6 +214,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF1672CB2D593B3400DF0C37 /* SignInAppleHelper.swift in Sources */,
+				AF1672CC2D593B3400DF0C37 /* SignInGoogleHelper.swift in Sources */,
 				AFE230622D35ABCA002F5B0E /* Bundle-Decodable.swift in Sources */,
 				AF5041972D3801EB009109DB /* ViewExtensions.swift in Sources */,
 				AFDE43252D32D204009D0DF6 /* Utilities.swift in Sources */,
