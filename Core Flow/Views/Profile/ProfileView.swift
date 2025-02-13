@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ProfileView: View {
-    
     @StateObject var viewModel = ProfileViewModel()
     @State private var isAuth: Bool = false
 
