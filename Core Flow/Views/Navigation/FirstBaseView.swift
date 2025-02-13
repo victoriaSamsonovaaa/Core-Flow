@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FirstBaseView: View {
-    
     @State private var isAuthenticated: Bool = false
     
     var body: some View {

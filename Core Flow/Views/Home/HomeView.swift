@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @EnvironmentObject var profileViewModel: ProfileViewModel
+    
     @State var calories: Int = 120
     @State var active: Int = 10
     @State var stand: Int = 15
@@ -21,66 +23,82 @@ struct HomeView: View {
     ]
     
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Welcome")
-                    .font(.largeTitle)
+        NavigationStack {
+            ScrollView(showsIndicators: false) {
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        Text("Welcome")
+                            .font(.largeTitle)
+                            .padding()
+                        
+                        Spacer()
+                        
+                        Text(profileViewModel.user?.initials ?? "N/A")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.customBlue)
+                            .frame(width: 70, height: 70)
+                            .background(.gray.opacity(0.5))
+                            .clipShape(.circle)
+                        
+                    }
                     .padding()
 
-                HStack {
-                    Spacer()
-                    
-                    VStack {
-                        VStack(alignment: .leading, spacing: 6) {
-                            Text("Calories")
-                                .font(.callout)
-                                .bold()
-                                .foregroundStyle(.red)
-                            Text("\(calories) kcal")
-                                .bold()
-                        }
-                        .padding(.bottom)
+                    HStack {
+                        Spacer()
+                        
+                        VStack {
+                            VStack(alignment: .leading, spacing: 6) {
+                                Text("Calories")
+                                    .font(.callout)
+                                    .bold()
+                                    .foregroundStyle(.red)
+                                Text("\(calories) kcal")
+                                    .bold()
+                            }
+                            .padding(.bottom)
 
-                        VStack(alignment: .leading, spacing: 6) {
-                            Text("Active")
-                                .font(.callout)
-                                .bold()
-                                .foregroundStyle(.green)
-                            Text("\(active) mins")
-                                .bold()
-                        }
-                        .padding(.bottom)
+                            VStack(alignment: .leading, spacing: 6) {
+                                Text("Active")
+                                    .font(.callout)
+                                    .bold()
+                                    .foregroundStyle(.green)
+                                Text("\(active) mins")
+                                    .bold()
+                            }
+                            .padding(.bottom)
 
-                        VStack(alignment: .leading, spacing: 6) {
-                            Text("Stand")
-                                .font(.callout)
-                                .bold()
-                                .foregroundStyle(.blue)
-                            Text("\(stand) hours")
-                                .bold()
+                            VStack(alignment: .leading, spacing: 6) {
+                                Text("Stand")
+                                    .font(.callout)
+                                    .bold()
+                                    .foregroundStyle(.blue)
+                                Text("\(stand) hours")
+                                    .bold()
+                            }
+                            .padding(.bottom)
                         }
-                        .padding(.bottom)
+                        
+                        Spacer()
+                        
+                        ZStack {
+                            ProgressRingView(progress: $calories, goal: 500, color: Color(red: 250 / 255, green: 17 / 255, blue: 79 / 255))
+                            ProgressRingView(progress: $active, goal: 60, color: Color(red: 16 / 255, green: 255 / 255, blue: 0))
+                                .padding(20)
+                            ProgressRingView(progress: $stand, goal: 13, color: Color(red: 0 / 255, green: 255 / 255, blue: 276 / 255))
+                                .padding(40)
+                        }
+                        .padding(.horizontal)
                     }
+                    .padding()
                     
-                    Spacer()
-                    
-                    ZStack {
-                        ProgressRingView(progress: $calories, goal: 500, color: .red)
-                        ProgressRingView(progress: $active, goal: 60, color: .green)
-                            .padding(20)
-                        ProgressRingView(progress: $stand, goal: 13, color: .blue)
-                            .padding(40)
+                    LazyVGrid(columns: Array(repeating: GridItem(spacing: 20), count: 2)) {
+                        ForEach(mockActiv, id: \.id) { act in
+                            ActivityLabelView(activity: act)
+                        }
                     }
                     .padding(.horizontal)
                 }
-                .padding()
-                
-                LazyVGrid(columns: Array(repeating: GridItem(spacing: 20), count: 2)) {
-                    ForEach(mockActiv, id: \.id) { act in
-                        ActivityLabelView(activity: act)
-                    }
-                }
-                .padding(.horizontal)
             }
         }
     }
@@ -88,6 +106,7 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+        .environmentObject(ProfileViewModel())
 }
 
 
