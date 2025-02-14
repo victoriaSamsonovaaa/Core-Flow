@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @StateObject var viewModel = ProfileViewModel()
+    @EnvironmentObject var viewModel: ProfileViewModel
     @State private var isAuth: Bool = false
 
     var body: some View {
@@ -91,4 +91,5 @@ struct ProfileView: View {
 
 #Preview {
     ProfileView()
+        .environmentObject(ProfileViewModel())
 }

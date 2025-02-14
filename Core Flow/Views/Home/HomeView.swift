@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    
+
     @EnvironmentObject var profileViewModel: ProfileViewModel
-    
     @State var calories: Int = 120
     @State var active: Int = 10
     @State var stand: Int = 15

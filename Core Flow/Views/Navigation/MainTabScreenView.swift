@@ -23,8 +23,6 @@ struct MainTabScreenView: View {
                         Label("Home", systemImage: "house")
                     }
                     .tag(Tab.home)
-                    .environmentObject(profileViewModel)
-
                 WorkoutsView()
                     .tabItem {
                         Label("Workouts", systemImage: "list.bullet")
@@ -37,6 +35,7 @@ struct MainTabScreenView: View {
                     }
                     .tag(Tab.settings)
             }
+            .environmentObject(profileViewModel)
             .accentColor(Color(#colorLiteral(red: 0.09077811986, green: 0.09625732154, blue: 0.2869860828, alpha: 0.7636585884)))
         }
     }
